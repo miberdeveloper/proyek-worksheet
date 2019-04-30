@@ -11,32 +11,50 @@ Terdapat 7 tim antara lain :
 7. **Login & Register** (Diki P, Amadeus, Yuzza)
 
 ---
-## Admin
+# Tata cara install, menginputkan dan mengambil data di github
+
+1.  Melakukan clone data
+   ``` bash 
+   git clone https://github.com/miberdeveloper/proyek-worksheet.git -b *nama_branch* 
+   ```
+
+2. Daftar branch yang terdaftar : 
+   1. admin
+   2. personalia
+   3. pergudangan
+   4. keuangan
+   5. e_commerce
+   6. simpan_pinjam
+   7. login_register
+
+3. Melakukan remote pada folder/data yang sudah di clone, seperti dibawah
+
+#### Admin
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b admin
 ```
 
-## Personalia
+#### Personalia
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b personalia
 ```
 
-## Pergudangan
+#### Pergudangan
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b pergudangan
 ```
 
-## Keuangan
+#### Keuangan
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b keuangan
 ```
 
-## E-Commerce
+#### E-Commerce
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b e_commerce
 ```
 
-## Simpan Pinjam
+#### Simpan Pinjam
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b simpan_pinjam
 ```
@@ -45,4 +63,3 @@ git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-workshe
 ```bash
 git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b login_register
 ```
-
