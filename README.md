@@ -33,16 +33,16 @@ git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-workshe
 
 ## E-Commerce
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b ecommerce
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b e_commerce
 ```
 
 ## Simpan Pinjam
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b simpanpinjam
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b simpan_pinjam
 ```
 
 ## Login & Register
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b loginregister
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b login_register
 ```
 
