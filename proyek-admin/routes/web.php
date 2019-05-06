@@ -11,6 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// ADMIN
+
+Route::group(['prefix' => 'admin'], function () {
+
+    // Admin Pergudangan
+    Route::resource('pergudangan', 'AdminPergudanganController');
+
+    // Admin E-Commerce
+
+    // Admin Personalia
+
+    // Admin Keuangan
+
+    // Admin Login & register
+
+    // Admin Simpan Pinjam
 });
+
+
+
+
