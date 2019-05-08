@@ -6,6 +6,6 @@ Daftar kelompok **Admin** :
 
 # Cara Install
 1. Clone project
-2. Merubah konfigurasi di koneksi 
+2. Merubah konfigurasi di koneksi
 
 Semangat **admin** :fire:
