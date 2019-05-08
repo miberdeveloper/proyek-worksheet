@@ -19,47 +19,77 @@ Terdapat 7 tim antara lain :
    ```
 
 2. Daftar branch yang terdaftar : 
-   1. admin
-   2. personalia
-   3. pergudangan
-   4. keuangan
-   5. e_commerce
-   6. simpan_pinjam
-   7. login_register
+   - admin
+   - personalia
+   - pergudangan
+   - keuangan
+   - e_commerce
+   - simpan_pinjam
+   - login_register
 
 3. Melakukan remote pada folder/data yang sudah di clone, seperti dibawah
 
 #### Admin
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b admin
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git 
 ```
 
 #### Personalia
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b personalia
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git
 ```
 
 #### Pergudangan
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b pergudangan
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git
 ```
 
 #### Keuangan
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b keuangan
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git 
 ```
 
 #### E-Commerce
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b e_commerce
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git
 ```
 
 #### Simpan Pinjam
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b simpan_pinjam
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git
 ```
 
 #### Login & Register
 ```bash
-git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git -b login_register
+git remote add *nama_mahasiswa* https://github.com/miberdeveloper/proyek-worksheet.git
 ```
+
+4. Melakukan **Add**, **Commit**, **pull** dan **push** data
+   
+- Add
+
+```bash
+git add .
+```
+> Titik ( . ) adalah berarti dia menambahkan data seluruhnya/menambahkan seluruh data dan folder
+
+- Commit
+  
+```bash
+git commit -m "Komentar"
+```
+> Komentar diisi bedasarkan pekerjaan yang sudah di lakukan
+
+- Pull
+  
+```bash
+git pull
+```
+> Mengambil data/perubahan yang dilakukan oleh anggota/team lain, harus melakukan pull terlebih dahulu sebelum melakukan push
+
+- Push
+
+```bash
+git push *nama_mahasiswa* *nama_branch*
+```
+> git push digunakan untuk mengupload project ke github.com. pastikan git remote sudah dibuat dan branch sesuai dengan nama kelompoknya
