@@ -11,6 +11,10 @@ Terdapat 7 tim antara lain :
 7. **Login & Register** (Diki P, Amadeus, Yuzza)
 
 ---
+
+# Tutorial dan Refrensi Github
+- [Refrensi](https://github.com/miberdeveloper/proyek1#melakukan-remote-dan-clone-file)
+
 # Tata cara install, menginputkan dan mengambil data di github
 
 1.  Melakukan clone data
