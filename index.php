@@ -1,8 +1,16 @@
 <?php
    $title = "E-Koperasi";
-   
+   $judulKonten = "Dashboard";
+   $keteranganKonten = "Keterangan dashboard";
+   $breadcrumbKonten = "Home";
+
    include "config/header.php";
+   
+   $page = $_REQUEST['page'];
+   $statusMenu = $_REQUEST['page2'];
+   
    include "config/sidebar.php";
+
 ?>
 
 <!-- CONTENT -->
