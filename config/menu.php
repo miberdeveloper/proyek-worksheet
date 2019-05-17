@@ -15,8 +15,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?= $page == "pergudangan" && $statusMenu == "home" ? "active" : "" ?>"><a href="index.php?page=pergudangan&page2=home"><i class="fa fa-home"></i> Home</a></li>
-            <li class="<?= $page == "pergudangan" && $statusMenu == "admin" ? "active" : "" ?>"><a href="index.php?page=pergudangan&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
+            <li class="<?= $page == "pergudangan" && $statusMenu == "home" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="<?= $page == "pergudangan" && $statusMenu == "admin" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
           </ul>
         </li>
         <li class="treeview <?= $page == "ecommerce" ? "active" : "" ?>">
