@@ -1,20 +1,21 @@
-<?php 
+<?php
     $id = $_REQUEST['id'];
 
-    $data = query("SELECT * FROM admin WHERE id = '$id'")[0];
+    $data = query("SELECT * FROM anggota WHERE id = '$id'")[0];
 ?>
+
 <div class="row">
     <div class="col-md-7 col-xs-12">
         <div class="box">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Pengguna </h3>
+                    <h3 class="box-title">Edit Anggota </h3>
                 </div>
                 <form role="form" action="" method="POST" enctype="multipart/form-data">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="<?= $data['username'] ?>" required disabled readonly>
+                            <label for="nomer_anggota">Nomer Anggota</label>
+                        <input type="text" class="form-control" id="nomer_anggota" name="nomer_anggota" value="<?= $data['nomor_anggota'] ?>" readonly required>
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama</label>
@@ -23,6 +24,10 @@
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
                         <textarea type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan alamat" required><?= $data['alamat'] ?></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="<?= $data['username'] ?>" required>
                         </div>
                         <div class="form-group">
                            <label for="jk">Jenis Kelamin</label>
@@ -55,7 +60,6 @@
                             <p class="help-block">* Maksimal 2 MB</p>
                         </div> -->
                     </div>
-                    <input type="hidden" name="id" value="<?= $id ?>">
                     <div class="box-footer text-center">
                         <button type="submit" name="submit" class="btn btn-primary btn-block">Simpan</button>
                     </div>
@@ -66,17 +70,17 @@
 </div>
 <?php
    if (isset($_POST['submit'])) {
-      if (editAdmin($_POST) > 0) {
+      if (editAnggota($_POST) > 0) {
          echo "
          <script>
             alert('Data user berhasil ditambahkan');
-            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
+            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
          </script>
          ";
       } else {
          echo "
          <script>
-            alert('Data gagal ditambahkan');
+         // alert('Data gagal ditambahkan');
          // document.location.href = 'tambahjenis.php';            
          </script>
          ";

@@ -1,10 +1,14 @@
 <?php 
-   $query = query("SELECT * FROM anggota a inner join jenis_user j ON a.jenis_anggota = j.id WHERE j.jenis = 'pergudangan' ORDER BY a.id");
+   $query = query("SELECT a.id as 'idAnggota', a.*, j.* FROM anggota a inner join jenis_user j ON a.jenis_anggota = j.id WHERE j.jenis = 'pergudangan' ORDER BY a.id");
+   $link = "pergudangan.php?page=pergudangan&page2=admin";
+   $dataGet = $_REQUEST['data'];
+
+   if ($dataGet == 'ang') {
 ?>
 <div class="box">
    <div class="box-header">
       <h3 class="box-title">Anggota Pergudangan</h3>
-      <a href="#" style="float: right" class="btn btn-sm btn-success"><span class="fa fa-plus"></span> Tambah</a>
+      <a href="<?= $link. '&data=tambah-ang' ?>" style="float: right" class="btn btn-sm btn-success"><span class="fa fa-plus"></span> Tambah</a>
    </div>
    <div class="row">
       <div class="col-md-12">
@@ -48,10 +52,11 @@
                         </span>
                      </td>
                      <td>
-                        <div class="btn-group-vertical">
-                              <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                              <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                        <div class="btn-group-sm">
+                              <a href="<?= $link .'&data=edit-ang&id='. $data['idAnggota'] ?>" class="btn btn-warning">Edit</a>
+                              <a href="<?= $link .'&data=hapus-ang'. $data['idAnggota'] ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?')">Hapus</a>
                         </div>
+                           <a href="<?= $link. '&data=edit-status' ?>" style="margin-top: 3px;" class="btn btn-info btn-block">Ubah Status</a>
                      </td>
                   </tr>
                      <?php } ?>
@@ -62,3 +67,8 @@
       </div>
    </div>
 </div>
+<?php
+   } else {
+      include_once "aksi-admin.php";
+   } 
+?>
