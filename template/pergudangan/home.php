@@ -81,26 +81,26 @@
 </div>
 <?php
    if (isset($data)) {
-      switch ($data) {
-         case 'adm':
-            include_once "admin-table.php";
-            break;
-         case 'ang':
-            include_once "anggota-table.php";
-            break;
-         case 'bhn-baku':
-            include_once "bahanbaku-table.php";
-            break;
-         case 'bhn-jadi':
-            include_once "bahanjadi-table.php";
-            break;
-         
-         default:
-            echo '
-               <div class="alert alert-danger text-center">
-                  Nothing
-               </div> ';
-            break;
-      }
+         switch ($data) {
+            case 'adm':
+               include_once "admin-table.php";
+               break;
+            case 'ang':
+               include_once "anggota-table.php";
+               break;
+            case 'bhn-baku':
+               include_once "bahanbaku-table.php";
+               break;
+            case 'bhn-jadi':
+               include_once "bahanjadi-table.php";
+               break;
+            
+            default:
+               echo '
+                  <div class="alert alert-danger text-center">
+                     Nothing
+                  </div> ';
+               break;
+         }
    }
 ?>
