@@ -1,4 +1,6 @@
 <?php
+  ini_set("display_errors", 0);
+
    include "koneksi/koneksi.php";
    include "config/fungsi.php";
 
