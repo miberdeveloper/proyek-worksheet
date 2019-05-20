@@ -20,6 +20,18 @@
                             <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="" required>
                         </div>
                         <div class="form-group">
+                            <label for="jenis">Jenis Admin</label>
+                            <select name="jenis" id="jenis" class="form-control">
+                                <option value="" selected disabled>Pilih jenis admin</option>
+                                <?php 
+                                    $query = query("SELECT * FROM jenis_user");
+                                    foreach ($query as $data) {
+                                ?>
+                                    <option value="<?= $data['id'] ?>"><?= $data['jenis'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
                            <label for="jk">Jenis Kelamin</label>
                            <select name="jk" id="jk" class="form-control">
                               <option value="" disabled selected>Pilih jenis kelamin</option>
