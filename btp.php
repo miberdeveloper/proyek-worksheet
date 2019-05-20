@@ -286,18 +286,12 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Penawaran Barang</span>
-          </a>
-
-        <li class="treeview">
-          <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Order Barang</span>
             <span class="pull-right-container">
               <span class="label label-primary pull-right">4</span>
             </span>
           </a>
-
         <li>
           <a href="btp.php">
             <i class="fa fa-th"></i> <span>Bukti Transaksi Penjualan</span>
@@ -306,22 +300,25 @@
             </span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="btp.php">
-            <i class="fa fa-pie-chart"></i>
-            <span>Penjualan Barang</span>
-            <a href="">
-            <i class="fa fa-edit"></i> <span>Laporan Penjualan Barang</span>
-          <a href="#">
-            <i class="fa fa-table"></i> <span>Peraturan Pergudangan</span>
-  </li>
-  </a>
-  </aside>
-  
-
+            <i class="fa fa-th"></i> <span>Penjualan Barang</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="btp.php">
+            <i class="fa fa-th"></i> <span>Laporan Penjualan</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
-
+</aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
