@@ -49,7 +49,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=tambah-adm';
+                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-adm';
                 </script>
                     ";
             return false;
@@ -166,7 +166,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=tambah-ang';
+                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-ang';
                 </script>
                     ";
             return false;
