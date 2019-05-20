@@ -46,7 +46,7 @@
             <li class="<?= $page == "pergudangan" && $statusMenu == "admin" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
           </ul>
         </li>
-        <li class="treeview <?= $page == "ecommerce" ? "active" : "" ?>">
+        <li class="treeview <?= $page == "simpanpinjam" ? "active" : "" ?>">
         <!-- diatas aktif default active  -->
         <a href="#">
             <i class="fa fa-money"></i> <span>Simpan Pinjam</span>
