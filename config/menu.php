@@ -21,6 +21,19 @@
         </li>
         <li class="treeview <?= $page == "ecommerce" ? "active" : "" ?>">
         <!-- diatas aktif default active  -->
+        <a href="#">
+            <i class="fa fa-industry"></i> <span>Simpan Pinjam</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class="<?= $page == "simpanpinjam" && $statusMenu == "home" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="<?= $page == "simpanpinjam" && $statusMenu == "admin" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
+          </ul>
+        </li>
+        <li class="treeview <?= $page == "ecommerce" ? "active" : "" ?>">
+        <!-- diatas aktif default active  -->
           <a href="#">
             <i class="fa fa-cart-plus"></i> <span>E-Commerce</span>
             <span class="pull-right-container">
