@@ -285,18 +285,18 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
+          <a href="order.php">
+            <i class="fa fa-th"></i>
             <span>Order Barang</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+            <small class="label pull-right bg-green"></small>
             </span>
           </a>
         <li>
           <a href="btp.php">
             <i class="fa fa-th"></i> <span>Bukti Transaksi Penjualan</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green"></small>
             </span>
           </a>
         </li>
@@ -304,7 +304,7 @@
           <a href="btp.php">
             <i class="fa fa-th"></i> <span>Penjualan Barang</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green"></small>
             </span>
           </a>
         </li>
@@ -312,7 +312,7 @@
           <a href="btp.php">
             <i class="fa fa-th"></i> <span>Laporan Penjualan</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green"></small>
             </span>
           </a>
         </li>
