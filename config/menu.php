@@ -49,7 +49,7 @@
         <li class="treeview <?= $page == "ecommerce" ? "active" : "" ?>">
         <!-- diatas aktif default active  -->
         <a href="#">
-            <i class="fa fa-industry"></i> <span>Simpan Pinjam</span>
+            <i class="fa fa-money"></i> <span>Simpan Pinjam</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

@@ -88,11 +88,11 @@
             case 'ang':
                include_once "anggota-table.php";
                break;
-            case 'bhn-baku':
-               include_once "bahanbaku-table.php";
+            case 'angsuran':
+               include_once "angsuran-table.php";
                break;
-            case 'bhn-jadi':
-               include_once "bahanjadi-table.php";
+            case 'pinjaman':
+               include_once "pinjaman-table.php";
                break;
             
             default:
