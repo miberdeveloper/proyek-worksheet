@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Barang</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../css/bootstrap.min.css" />
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="../css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="../css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="../css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="../css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    
+</head>
+<body>
+        <style>
+                .textarea { /*untuk mengatur posisi tataletak dari class text area pada alamat*/
+                    width: 100%;
+                    height: 150px;
+                    padding: 12px 20px;
+                    box-sizing: border-box;
+                    border: 2px solid #ccc;
+                    border-radius: 4px;
+                    background-color: #f8f8f8;
+                    resize: none;
+                }
+                </style>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-md-offset-4">
+                            <h1 class="text-center login-title"><b>Daftar User baru</b></h1>
+                            
+                            
+                            <div class="account-wall">
+                                    
+                                <form method="post" action="" method="post" class="form-horizontal">               
+                                 <label for="nama"><h4>Nama Barang : </h4></label> <!--input untuk form nama -->
+                                <input type="text" name="nama" class="form-control" required>
+                                <label for="nama"><h4>Stock : </h4></label> <!--input untuk form username -->
+                                <input type="text" name="stock" class="form-control" required>
+                                <label for="nama"><h4>Deskripsi : </h4></label> <!--input untuk form alamat -->
+                                <input type="text" name="alamat" class="textarea" required> <!--input untuk tombol simpan -->
+                                <div class="card">
+                                    <div class="header">
+                                        <h4 class="title">Foto : </h4>
+                                    </div>
+                                    <div class="content">
+                                     <form action='' method='post' enctype="multipart/form-data">
+                                       <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>Pilih</label>
+                                                        <input type="file" name="gambar" class="form-control-file" >
+                                                    </div>
+                                                        
+                                                </div>
+                                            </div>
+                                <button class="btn btn-lg btn-primary btn-block" name="simpan"  type="submit">
+                                Simpan</button>
+                                                               
+                                </form>
+                            </div>
+                           
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                
+    
+</body>
+</html>
