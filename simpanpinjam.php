@@ -25,7 +25,7 @@
 
             // Jika dipilih admin site
             case 'admin':
-               include "template/simpanpinjam/#";         
+               include "template/simpanpinjam/admin.php";         
             break;
             
             default:
