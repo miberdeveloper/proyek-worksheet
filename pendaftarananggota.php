@@ -405,7 +405,7 @@
                     <td align="center"><b>Email</b></td>
                     <td align="center"><b>Telepon</b></td>
                     <td align="center"><b>Foto</b></td>
-                    <td align="center"><b>Jenis Admin</b></td>
+                    <td align="center"><b>Jenis Anggota</b></td>
                     <td align="center"><b>Tanggal Daftar</b></td>
                     <td align="center"><b>Status</b></td>
                     <td align="center"><b>AKSI</b></td>
@@ -414,7 +414,7 @@
 <tbody>
 <?php $i=1 ?>
 <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
+	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
 				  $cari = $_GET['cari'];
 				  $result = mysqli_query($koneksi ,"select * from anggota where id_bahan_jadi like '%".$cari."%'");				
@@ -427,21 +427,21 @@
 	<td><?php echo $row['id'];?></td>
     <td><?php echo $row['nomor_anggota'];?></td>
     <td><?php echo $row['username'];?></td>
-    <td><?php echo $row['password'];?></td>
+    <!-- <td><?php echo $row['password'];?></td> -->
     <td><?php echo $row['nama'];?></td>
     <td><?php echo $row['alamat'];?></td>
     <td><?php echo $row['jenis_kelamin'];?></td>
     <td><?php echo $row['email'];?></td>
     <td><?php echo $row['telepon'];?></td>
     <td><?php echo $row['foto'];?></td>
-    <td><?php echo $row['jenis_admin'];?></td>
+    <td><?php echo $row['jenis_anggota'];?></td>
     <td><?php echo $row['tgl_daftar'];?></td>
     <td><?php echo $row['status'];?></td>
 	<td>
 		<center>
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<a class="btn btn-success" href="updateanggota.php?id=<?php echo $show['id'];?>">Edit <!-- untuk ke tampilan edit -->
-			<a class="btn btn-danger" href="deleteanggota.php?id=<?php echo $show['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+			<a class="btn btn-success" href="updateanggota.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="deleteanggota.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
 		</div>
 		</center>
 	</td>

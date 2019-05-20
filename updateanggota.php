@@ -1,8 +1,7 @@
 <?php
 include "koneksi/koneksi.php"; // memanggil file koneksi.php untuk menghubungkan ke database
 //memberikan perintah query sql menampilkan data berdasarkan id yang dipilih
-$data = mysqli_query($mysqli, "SELECT * FROM tb_petugas WHERE id_petugas='$_GET[id]'");
-$datashow = mysqli_fetch_array($data); // menampilkan data yang sudah di pilih untuk di edit
+$data = query("SELECT * FROM anggota WHERE id='$_GET[id]' ")[0];
 ?>
 <!DOCTYPE html>
 <html>
@@ -391,115 +390,117 @@ $datashow = mysqli_fetch_array($data); // menampilkan data yang sudah di pilih u
         <li class="active">Dashboard</li>
       </ol>
     </section>
-    <div class="container">
-        <div class="row" style="position: relative;padding-left:40%;top:14em">
-        <form action="updatesqlreceptionis.php" method="post">
-        <div class="form-group">
-            <table width="444" border="1" align="center">
-                <tr>
-                <legend><b><h2>UPDATE DATA ANGGOTA</h2></b></legend>
-                </tr>
-                </div>
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Id</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="id" value="<?php echo $_GET['id'];?>"> 
-                    </div>
-                    </div>
+    <div id="index"> <!-- memanggil css index -->
+    <div class="container"> <!-- tampilan kotak luar agar tidak full -->
+    <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
+        <form action="updatesqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+            <tr>
+            <th colspan="2" scope="row"><h2><center><b>Update Anggota Baru</b></center></h2></th> <!-- judul pada tabel -->
+            </tr>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Id Anggota</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="nomor_anggota" value="<?php echo $_GET['nomor_anggota'];?>"> 
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Id</th> <!-- kolom baju -->
+            <td><input type="text" name="id" value="<?php echo $_GET['id'];?>"> 
+            </tr></center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Username</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="username" value="<?php echo $_GET['username'];?>"> 
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
+            <td><input type="text" name="nomor_anggota" value="<?php echo $data['nomor_anggota'];?>"> 
+            </tr></center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Password</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="password" value="<?php echo $_GET['password'];?>"> 
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Username</th> <!-- kolom baju -->
+            <td><input type="text" name="username" value="<?php echo $data['username'];?>"> 
+            </tr></center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Nama</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="nama" value="<?php echo $datashow['nama'];?>"> 
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Password</th> <!-- kolom baju -->
+            <td><input type="text" name="password" value="<?php echo $data['password'];?>"></td>
+            </tr><center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Alamat</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="alamat" value="<?php echo $datashow['alamat']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
+            <td><input type="text" name="nama" value="<?php echo $data['nama'];?>"></td>
+            </tr></center>
+            </div>
+            <tr>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Jenis Kelamin</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="jenis_kelamin" value="<?php echo $_GET['jenis_kelamin'];?>"> 
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Alamat</th> <!-- kolom baju -->
+            <td><input type="text" name="alamat" value="<?php echo $data['alamat'];?>"></td></td>
+            </tr></center>
+            </div>
+            <tr>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Email</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="email" value="<?php echo $datashow['email']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Jenis Kelamin</th> <!-- kolom baju -->
+            <td><input type="text" name="jenis_kelamin" value="<?php echo $data['jenis_kelamin'];?>"</td>
+            </tr></center>
+            </div>
+            <tr>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Telepon</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="telepon" value="<?php echo $datashow['telepon']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Email</th> <!-- kolom baju -->
+            <td><input type="text" name="email" value="<?php echo $data['email'];?>"</td>
+            </tr></center>
+            </div>
+            <tr>
+            
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Telepon</th> <!-- kolom baju -->
+            <td><input type="text" name="telepon" value="<?php echo $data['telepon'];?>"</td>
+            </tr></center>
+            </div>
+            <tr>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Foto</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="foto" value="<?php echo $datashow['foto']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Foto</th> <!-- kolom baju -->
+            <td><input type="text" name="foto" value="<?php echo $data['foto'];?>"</td>
+            </tr></center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Jenis Admin</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="jenis_admin" value="<?php echo $datashow['jenis_admin']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Jenis Anggota</th> <!-- kolom baju -->
+            <td><input type="text" name="jenis_anggota" value="<?php echo $data['jenis_anggota'];?>"</td>
+            </tr></center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Tanggal Daftar</b></label>
-                    <div class="col-sm-6">
-                    <input type="date" name="tgl_daftar" value="<?php echo $datashow['tgl_daftar']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Tanggal Daftar</th> <!-- kolom baju -->
+            <td><input type="date" name="tgl_daftar" value="<?php echo $data['tgl_daftar'];?>"</td>
+            </tr></center>
+            </div>
 
-                    <div class="form-group">
-                    <label for="input-id" class="col-sm-2"><b>Status</b></label>
-                    <div class="col-sm-6">
-                    <input type="text" name="status" value="<?php echo $datashow['status']; ?>">
-                    </div>
-                    </div>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Status</th> <!-- kolom baju -->
+            <td><input type="text" name="status" value="<?php echo $data['status'];?>"</td>
+            </tr></center>
+            </div>
 
-                <button type="submit" name="update" class="btn btn-primary">Edit</button>
-                <!-- <a href="../aaaaa/updatereceptionis.php" class="btn btn-primary"> edit </a> -->
-                </div>
-        </form>
-        </div>
-        </div>
-        </div>
+            <center><button type="submit" name="update" class="btn btn-primary">Edit</button></center>
+            <p><center><a href="pendaftarananggota.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
+            </tr>
+            
         </div>
     </div>
+</div>
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">

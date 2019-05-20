@@ -11,13 +11,13 @@ $jenis_kelamin = $_POST['jenis_kelamin'];
 $email = $_POST['email'];
 $telepon = $_POST['telepon'];
 $foto = $_POST['foto'];
-$jenis_admin = $_POST['jenis_admin'];
+$jenis_anggota = $_POST['jenis_anggota'];
 $tgl_daftar = $_POST['tgl_daftar'];
 $status = $_POST['status'];
 
 //menambahkan query sql tambah data untuk memasukkan data ke database
 $data = mysqli_query($mysqli,"INSERT INTO anggota SET id='', nomor_anggota='$nomor_anggota', username='$username', password='$password', nama='$nama',
- alamat='$alamat', jenis_kelamin='$jenis_kelamin', email='$email', telepon='$telepon', foto='$foto', jenis_admin='$jenis_admin', tgl_daftar='$tgl_daftar', status='$status'")
+ alamat='$alamat', jenis_kelamin='$jenis_kelamin', email='$email', telepon='$telepon', foto='$foto', jenis_anggota='$jenis_anggota', tgl_daftar='$tgl_daftar', status='$status'")
         or die ("data salah : ".mysqli_error($mysqli));
  
 //  untuk mengetahui apakah data berhasil disimpan atau belum

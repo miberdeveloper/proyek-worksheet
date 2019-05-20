@@ -2,7 +2,7 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$database = "miberdev"; // nama database
+$database = "proyek1"; // nama database
 
 $mysqli = new mysqli ($server, $username, $password, $database);
 if (mysqli_connect_errno()) {

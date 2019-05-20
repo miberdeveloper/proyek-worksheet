@@ -385,121 +385,13 @@
         <li class="active">Dashboard</li>
       </ol>
     </section>
-    <div id="index"> <!-- memanggil css index -->
-    <div class="container"> <!-- tampilan kotak luar agar tidak full -->
-    <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="tambahsqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
-            <tr>
-            <th colspan="2" scope="row"><h2><center><b>Tambah Anggota Baru</b></center></h2></th> <!-- judul pada tabel -->
-            </tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="nomor_anggota" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Username</th> <!-- kolom baju -->
-            <td><input type="text" name="username" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Password</th> <!-- kolom baju -->
-            <td><input type="text" name="password" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
-            <td><input type="text" name="nama" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Alamat</th> <!-- kolom baju -->
-            <td><input type="text" name="alamat" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Kelamin</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_kelamin" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Email</th> <!-- kolom baju -->
-            <td><input type="text" name="email" /></td></center>
-            </tr>
-            </div>
-            <tr>
-            
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Telepon</th> <!-- kolom baju -->
-            <td><input type="text" name="telepon" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Foto</th> <!-- kolom baju -->
-            <td><input type="text" name="foto" ></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_anggota" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Tanggal Daftar</th> <!-- kolom baju -->
-            <td><input type="date" name="tgl_daftar" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Status</th> <!-- kolom baju -->
-            <td><input type="text" name="status" /></td></center>
-            </tr>
-            </div>
-
-            <tr>
-            <tr>
-            <tr>
-            <tr><center>
-            <th colspan="2" scope="row">
-            <!-- tampilan tulisan simpan untuk menyimpan data dan batal untuk membatalkan data berwarna biru -->
-            <input type="submit" name="simpan" id="simpan" class="btn btn-primary" value="simpan" />
-            <input type="reset" name="reset" id="reset" class="btn btn-primary" value="batal" /></th>
-  </center></tr>
-            <br>
-            <br>
-            <tr><center>
-            <p><a href="pendaftarananggota.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
-  </center></tr>
-            
-        </div>
-    </div>
-</div>
+    <br><br>
+    <div class="container">
+<div class="jumbotron">
+    <h2 class="display-4">Berhasil Update Data!!!</h2> <!-- isi dari class jumbotron -->
+    <hr class="my-4">
+    <a class="btn btn-info" href="pendaftarananggota.php" role="button">BACK</a> <!-- tampilan back bewarna hijau dan kembali ke tampil.php -->
+    <p>
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
