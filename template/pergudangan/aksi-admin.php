@@ -39,11 +39,11 @@ if (isset($data)) {
             break;
 
          case 'hapus-ang':
-            if (hapusAdmin($id) > 0) {
+            if (hapusAnggota($id) > 0) {
                echo "
                <script>
                   alert('Data berhasil dihapus');
-                  document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
+                  document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
                </script>
                ";
             } else {
@@ -58,7 +58,7 @@ if (isset($data)) {
             break;
          
          case 'edit-status':
-            echo "<h1>Edit status</h1>";
+            include_once "edit-status.php";            
             break;   
 
          default:

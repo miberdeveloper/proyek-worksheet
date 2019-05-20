@@ -52,11 +52,11 @@
                         </span>
                      </td>
                      <td>
-                        <div class="btn-group-sm">
-                              <a href="<?= $link .'&data=edit-ang&id='. $data['idAnggota'] ?>" class="btn btn-warning">Edit</a>
-                              <a href="<?= $link .'&data=hapus-ang'. $data['idAnggota'] ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?')">Hapus</a>
+                        <div class="btn-group">
+                              <a href="<?= $link .'&data=edit-ang&id='. $data['idAnggota'] ?>" class="btn-sm btn-warning">Edit</a>
+                              <a href="<?= $link .'&data=hapus-ang&id='. $data['idAnggota'] ?>" class="btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?')">Hapus</a>
                         </div>
-                           <a href="<?= $link. '&data=edit-status' ?>" style="margin-top: 3px;" class="btn btn-info btn-block">Ubah Status</a>
+                           <a href="<?= $link. '&data=edit-status&id='. $data['idAnggota'] ?>" style="margin-top: 5px;" class="btn btn-info btn-block">Ubah Status</a>
                      </td>
                   </tr>
                      <?php } ?>

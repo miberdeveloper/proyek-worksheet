@@ -18,16 +18,16 @@
                         <input type="text" class="form-control" id="nomer_anggota" name="nomer_anggota" value="<?= $data['nomor_anggota'] ?>" readonly required>
                         </div>
                         <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="<?= $data['username'] ?>" readonly required>
+                        </div>
+                        <div class="form-group">
                             <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama" value="<?= $data['nama'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
                         <textarea type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan alamat" required><?= $data['alamat'] ?></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="<?= $data['username'] ?>" required>
                         </div>
                         <div class="form-group">
                            <label for="jk">Jenis Kelamin</label>
@@ -54,6 +54,7 @@
                             <label for="password-confirm">Confirm Password</label>
                             <input id="password-confirm" type="password" class="form-control" name="password2" placeholder="Konfirmasi password" required>
                         </div>
+                        <input type="hidden" name="id" value="<?= $data['id'] ?>">
                         <!-- <div class="form-group">
                             <label for="exampleInputFile">Upload foto</label>
                             <input type="file" id="exampleInputFile" name="photo" value="{{ old('photo') }}" required>
@@ -73,7 +74,7 @@
       if (editAnggota($_POST) > 0) {
          echo "
          <script>
-            alert('Data user berhasil ditambahkan');
+            alert('Data user berhasil dirubah');
             document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
          </script>
          ";
