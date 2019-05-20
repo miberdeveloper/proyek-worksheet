@@ -13,14 +13,14 @@
   }
 
     //Kode Anggota
-    function nomerAnggota() {
+    function nomerAnggota($kode) {
         global $koneksi;
 
         $query = mysqli_query($koneksi, "SELECT max(id) as maxkode from anggota ");
         $data = mysqli_fetch_array($query);
         $kodeAnggota = $data['maxkode'];
         $nourut = ++$kodeAnggota;
-        $char = "AGP";
+        $char = $kode;
         $kodeAnggota = $char.sprintf("%05s", $nourut);
         return $kodeAnggota;
     }
