@@ -28,8 +28,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?= $page == "simpanpinjam" && $statusMenu == "home" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=home"><i class="fa fa-home"></i> Home</a></li>
-            <li class="<?= $page == "simpanpinjam" && $statusMenu == "admin" ? "active" : "" ?>"><a href="pergudangan.php?page=pergudangan&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
+            <li class="<?= $page == "simpanpinjam" && $statusMenu == "home" ? "active" : "" ?>"><a href="simpanpinjam.php?page=simpanpinjam&page3=home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="<?= $page == "simpanpinjam" && $statusMenu == "admin" ? "active" : "" ?>"><a href="simpanpinjam.php?page=simpanpinjam&page3=admin"><i class="fa fa-users"></i> Admin Site</a></li>
           </ul>
         </li>
         <li class="treeview <?= $page == "ecommerce" ? "active" : "" ?>">
