@@ -266,7 +266,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Renaldy Ardiansyah</p>
+          <p>Rachmad Roudis S.</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -286,7 +286,8 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
           <a href="order.php">
-            <i class="fa fa-th"></i><span>Order Barang</span>
+            <i class="fa fa-th"></i>
+            <span>Order Barang</span>
             <span class="pull-right-container">
             <small class="label pull-right bg-green"></small>
             </span>
@@ -330,87 +331,93 @@
 	// var_dump($result);
 	
 ?>
- <div class="table-users">
-   <h2><div class="header">Bukti Transaksi Barang Jadi</div></h2>
-   <a href="printbtpjd.php">PRINT BUKTI TRANSAKSI BARANG JADI</a>
-   
-   <table cellspacing="0">
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>STOK</title>
+  <meta charset="utf-8">
+  <meta name="viewport" >
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+
+<link rel="stylesheet" type="text/css" href="list.css">
+
+<!-- header and footer -->
+<div id="container"> 
+    <div id="header" >
+
+<form ction="tambah_stok.php" method="post">
+<div class="container text-center">    
+<div class="row">
+<div class="col-sm-20">    
+<div class="row">
+<div class="panel panel-default text-left">
+            <div class="panel-body">
+              <div class="container">
+
+   <center><h2>Bahan Baku</h2></center><br>
+  <a href="CRUD_bahanbaku.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
+   <table class="table table-striped">
+    <thead>
       <tr>
-         <th width="100"><center>NO</th>
-         <th width="220"><center>ID ADMIN</th>
-         <th width="180"><center>ID B_JADI</th>
-         <th width="180"><center>STOK</th>
-         <th width="180"><center>HARGA</th>
-         <th width="380"><center>TOTAL</th>
+        <th><center>Nomor</th>
+        <th><center>Nama</th>
+        <th><center>Harga</th>
+        <th><center>Stok</th>
+        <th><center>Jenis Bahan</th>
+        <th><center>Tanggal Masuk</th>
+        <th><center>Aksi</th>
+
       </tr>
-	  
-      <?php $i=1 ?>
+    </thead>
+    <tbody>
+
+       <?php $i=1 ?>
 		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
+	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
 				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_jadi where id_bahan_jadi like '%".$cari."%'");				
+				  $result = mysqli_query($koneksi ,"select * from bahan_baku where id like '%".$cari."%'");				
 			  }else{
-				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_jadi");		
+				  $result = mysqli_query($koneksi, "select * from bahan_baku");		
 			  }
         while($row=mysqli_fetch_assoc($result)){
 		  ?>
       <tr>
          <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id_admin'] ?></td>
-         <td><center><?= $row['id_bahan_jadi'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
+         <!--<td><center><?= $row['id'] ?></td>-->
+         <td><center><?= $row['nama'] ?></td>
          <td><center><?= $row['harga'] ?></td>
-         <td><?= $row['total'] ?></td>
+         <td><center><?= $row['stok'] ?></td>
+         <td><center><?= $row['jenis_bahan'] ?></td>
+         <td><center><?= $row['tgl_masuk'] ?></td>
+         <td>
+		<center>
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a class="btn btn-success" href="edit_bahanbaku.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="hapus_bahanbaku.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+		</div>
+		</center>
+	</td>
+         
       </tr>
       <?php } ?>
    </table>
 </div>
+    </tbody>
+  </table>
+</div>
 
- <div class="table-users">
-   <h2><div class="header">Bukti Transaksi Barang Baku</div></h2>
-   <a href="printbtpbk.php">PRINT BUKTI TRANSAKSI BARANG BAKU</a>
-
-      <table cellspacing="0">
-      <tr>
-         <th width="100"><center>NO</th>
-         <th width="220"><center>ID ADMIN</th>
-         <th width="180"><center>ID B_BAKU</th>
-         <th width="180"><center>STOK</th>
-         <th width="180"><center>HARGA</th>
-         <th width="380"><center>TOTAL</th>
-      </tr>
-	  
-      <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_baku where id_bahan_baku like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_baku");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id_admin'] ?></td>
-         <td><center><?= $row['id_bahan_baku'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><?= $row['total'] ?></td>
-      </tr>
-      <?php } ?>
-   </table>
-   </div>
   <!-- /.content-wrapper -->
   </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
 </div>
 <!-- ./wrapper -->
 

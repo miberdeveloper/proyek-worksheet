@@ -266,7 +266,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Renaldy Ardiansyah</p>
+          <p>Rachmad Roudis S.</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -286,7 +286,8 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
           <a href="order.php">
-            <i class="fa fa-th"></i><span>Order Barang</span>
+            <i class="fa fa-th"></i>
+            <span>Order Barang</span>
             <span class="pull-right-container">
             <small class="label pull-right bg-green"></small>
             </span>
@@ -330,79 +331,57 @@
 	// var_dump($result);
 	
 ?>
- <div class="table-users">
-   <h2><div class="header">Bukti Transaksi Barang Jadi</div></h2>
-   <a href="printbtpjd.php">PRINT BUKTI TRANSAKSI BARANG JADI</a>
-   
-   <table cellspacing="0">
-      <tr>
-         <th width="100"><center>NO</th>
-         <th width="220"><center>ID ADMIN</th>
-         <th width="180"><center>ID B_JADI</th>
-         <th width="180"><center>STOK</th>
-         <th width="180"><center>HARGA</th>
-         <th width="380"><center>TOTAL</th>
-      </tr>
-	  
-      <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_jadi where id_bahan_jadi like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_jadi");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id_admin'] ?></td>
-         <td><center><?= $row['id_bahan_jadi'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><?= $row['total'] ?></td>
-      </tr>
-      <?php } ?>
-   </table>
-</div>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>STOK</title>
+  <meta charset="utf-8">
+  <meta name="viewport" >
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
 
- <div class="table-users">
-   <h2><div class="header">Bukti Transaksi Barang Baku</div></h2>
-   <a href="printbtpbk.php">PRINT BUKTI TRANSAKSI BARANG BAKU</a>
+<link rel="stylesheet" type="text/css" href="list.css">
 
-      <table cellspacing="0">
-      <tr>
-         <th width="100"><center>NO</th>
-         <th width="220"><center>ID ADMIN</th>
-         <th width="180"><center>ID B_BAKU</th>
-         <th width="180"><center>STOK</th>
-         <th width="180"><center>HARGA</th>
-         <th width="380"><center>TOTAL</th>
-      </tr>
-	  
-      <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_baku where id_bahan_baku like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_baku");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id_admin'] ?></td>
-         <td><center><?= $row['id_bahan_baku'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><?= $row['total'] ?></td>
-      </tr>
-      <?php } ?>
-   </table>
-   </div>
+<!-- header and footer -->
+<form action="tambah_bahanbaku.php" method="post">
+  <div class="container text-center">    
+    <div class="row">
+
+      <div class="col-sm-20">
+
+        <div class="row">
+          <div class="col-sm-20">
+            <div class="panel panel-default text-left">
+              <div class="panel-body">
+                <div class="container">
+                  <center><h2>Stok Bahan Baku</h2><br>
+                  <label>Nama</label>
+                  <input name="nama" class="form-control" id="ex1" type="text" style="width:400px" required><br>
+                  <label>Harga</label>
+                  <input name="harga" class="form-control" id="ex1" type="text" style="width:400px" required><br>
+                  <label>Stok</label>
+                  <input name="stok" class="form-control" id="ex1" type="number" style="width:400px" required><br>
+                  <label>Jenis Bahan</label>
+                  <input name="jenis_bahan" class="form-control" id="ex1" type="number" style="width:400px" required><br>
+                  <label>Tanggal Masuk</label>
+                  <input name="tgl_masuk" class="form-control" id="ex1" type="date" style="width:400px" required><br>
+                  <button onclick=location=URL name="tambah" class="btn btn-lg btn-primary btn-block" type="submit" value="tambah" style="width:150px">TAMBAH</button><br><br></center>
+                  <table class="table table-striped">
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
   <!-- /.content-wrapper -->
   </div>
   <footer class="main-footer">
