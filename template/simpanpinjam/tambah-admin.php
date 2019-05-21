@@ -64,7 +64,7 @@
          echo "
          <script>
             alert('Data user berhasil ditambahkan');
-            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
+            document.location.href = 'simpanpinjam.php?page=simpanpinjam&page3=admin&data=adm';
          </script>
          ";
       } else {
