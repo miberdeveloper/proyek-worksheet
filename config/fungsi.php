@@ -153,7 +153,7 @@
         $email = $data['email'];
         $telepon = $data['telepon'];
         $foto = 'null';
-        $jenis_anggota = 1;
+        $jenis_anggota = $data['jenis'];
         $tgl_daftar = date('Y-m-d');
         $status = 1;
 
@@ -167,7 +167,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=tambah-ang';
+                    window.location = 'index.php';
                 </script>
                     ";
             return false;
@@ -202,6 +202,7 @@
         $jk = $data['jk'];
         $email = $data['email'];
         $telepon = $data['telepon'];
+        $jenis_anggota = $data['jenis'];
         $foto = 'null';
         // $jenis_anggota = 1;
         $tgl_daftar = date('Y-m-d');
@@ -242,6 +243,7 @@
         jenis_kelamin = '$jk',
         email = '$email',
         telepon = '$telepon',
+        jenis_anggota = '$jenis_anggota'
         password = '$password' WHERE id =  '$id' ";
 
         //tambah data

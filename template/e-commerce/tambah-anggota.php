@@ -1,5 +1,5 @@
 <?php
-    $nomer = nomerAnggota("AGP");
+    $nomer = nomerAnggota("AGE");
 ?>
 
 <div class="row">
