@@ -22,7 +22,7 @@
         <li class="treeview <?= $page == "keuangan" ? "active" : "" ?>">
         <!-- diatas aktif default active  -->
           <a href="#">
-            <i class="fa fa-money"></i> <span>Keuangan</span>
+            <i class="fa fa-random"></i> <span>Keuangan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>

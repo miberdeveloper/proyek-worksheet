@@ -1,5 +1,5 @@
 <?php
-   include "../koneksi/koneksi.php";
+   include "./koneksi/koneksi.php"; //merubah "..." menjadi "."
 
    function query($query){
       global $koneksi;
@@ -49,7 +49,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-adm';
+                    window.location = 'personalia.php?page=personalia&page2=admin&data=tambah-adm';
                 </script>
                     ";
             return false;
@@ -98,7 +98,7 @@
         //     echo "
         //         <script>
         //             alert('Terjadi kesalahan penginputan data');
-        //             window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
+        //             window.location = 'personalia.php?page=personalia&page2=admin&data=adm';
         //         </script>
         //             ";
         //     return false;
@@ -167,7 +167,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-ang';
+                    window.location = 'personalia.php?page=personalia&page2=admin&data=tambah-ang';
                 </script>
                     ";
             return false;
@@ -216,7 +216,7 @@
         //     echo "
         //         <script>
         //             alert('Username sudah ada');
-        //             window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=tambah-ang';
+        //             window.location = 'personalia.php?page=personalia&page2=admin&data=tambah-ang';
         //         </script>
         //             ";
         //     return false;
