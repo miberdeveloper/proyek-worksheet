@@ -326,7 +326,7 @@
 	
 ?>
  <div class="table-users">
-   <h2><center><div class="header">Bukti Transaksi Barang Baku</div></h2>
+   <h2><center><div class="header">Bukti Transaksi Bahan Baku</div></h2>
    <center><a href="printbtpbk.php" class="btn btn-info" role="button">PRINT</a>
 
        <table class="table table-striped">
