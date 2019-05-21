@@ -92,7 +92,7 @@
                include_once "angsuran-table.php";
                break;
             case 'pinjaman':
-               include_once "pinjaman-table.php";
+               include_once "peminjaman-table.php";
                break;
             
             default:

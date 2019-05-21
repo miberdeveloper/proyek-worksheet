@@ -1,8 +1,8 @@
 <?php 
-   $query = query("SELECT * FROM transaksi_angsuran b inner join transaksi_pinjam j ON b.id_angsuran = j.id ORDER BY b.id");
+   $query = query("SELECT * FROM transaksi_pinjam b inner join anggota j ON b.id_anggota = j.id ORDER BY b.id");
 ?>
 <div class="box">
-   <div class="box-header text-center"><h4>Tabel Angsuran</h4></div>
+   <div class="box-header text-center"><h4>Tabel Peminjaman</h4></div>
    <div class="row">
       <div class="col-md-12">
          <div class="box-body table-responsive">
@@ -10,11 +10,11 @@
                <thead>
                   <tr>
                      <th>#</th>
-                     <th>ID Angsuran</th>
+                     <!-- <th>ID</th> -->
                      <th>ID Anggota</th>
-                     <th>Total Angsuran</th>
-                     <th>Total Pinjam</th>
-                     <th>Tanggal Angsuran</th>
+                     <th>Nama Anggota</th>
+                     <th>Total Pinjam</th>      
+                     <th>Tanggal Pinjam</th>                     
                   </tr>
                </thead>
                <tbody>
@@ -23,11 +23,11 @@
                   ?>
                   <tr>
                      <td><?= ++$no ?>.</td>
-                     <td><b><?= $data["id_angsuran"] ?></b></td>
-                     <td><?= $data["id_anggota"] ?></td>
-                     <td><?= $data["total_angsuran"] ?></td>
+                     
+                     <td><b><?= $data["id_anggota"] ?></b></td>
+                     <td><?= $data["nama"] ?></td>
                      <td><?= $data["total_pinjam"] ?></td>                     
-                     <td><?= date("d-M-Y", strtotime($data["tgl_angsuran"]))  ?></td>
+                     <td><?= date("d-M-Y", strtotime($data["tgl_pinjam"]))  ?></td>
                   </tr>
                      <?php } ?>
                </tbody>
