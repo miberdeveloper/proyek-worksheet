@@ -266,7 +266,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Renaldy Ardiansyah</p>
+          <p>Rachmad Roudis S.</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -286,23 +286,19 @@
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
           <a href="order.php">
-            <i class="fa fa-th"></i><span>Order Barang</span>
+            <i class="fa fa-th"></i>
+            <span>Order Barang</span>
             <span class="pull-right-container">
             <small class="label pull-right bg-green"></small>
             </span>
           </a>
-          <li class="treeview">
-          <a href="index.php">
-            <i class="fa fa-th"></i>
-            <span>Bukti Transaksi</span>
+        <li>
+          <a href="btp.php">
+            <i class="fa fa-th"></i> <span>Bukti Transaksi Penjualan</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              <small class="label pull-right bg-green"></small>
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="btpbk.php"><i class="fa fa-circle-o"></i>BT Bahan Baku</a></li>
-            <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
-          </ul>
         </li>
         <li>
           <a href="btp.php">
@@ -335,54 +331,93 @@
 	// var_dump($result);
 	
 ?>
- <div class="table-users">
-   <h2><center><div class="header">Bukti Transaksi Barang Baku</div></h2>
-   <center><a href="printbtpbk.php" class="btn btn-info" role="button">PRINT</a>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>STOK</title>
+  <meta charset="utf-8">
+  <meta name="viewport" >
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
 
-       <table class="table table-striped">
-       <thead>
+<link rel="stylesheet" type="text/css" href="list.css">
+
+<!-- header and footer -->
+<div id="container"> 
+    <div id="header" >
+
+<form ction="tambah_stok.php" method="post">
+<div class="container text-center">    
+<div class="row">
+<div class="col-sm-20">    
+<div class="row">
+<div class="panel panel-default text-left">
+            <div class="panel-body">
+              <div class="container">
+
+   <center><h2>Bahan Baku</h2></center><br>
+  <a href="CRUD_bahanbaku.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
+   <table class="table table-striped">
+    <thead>
       <tr>
-         <th width="150"><center>NO</th>
-         <th width="150"><center>ID</th>
-         <th width="150"><center>ID ADMIN</th>
-         <th width="150"><center>ID B_BAKU</th>
-         <th width="150"><center>STOK</th>
-         <th width="150"><center>HARGA</th>
-         <th width="150"><center>TGL_MASUK</th>
+        <th><center>Nomor</th>
+        <th><center>Nama</th>
+        <th><center>Harga</th>
+        <th><center>Stok</th>
+        <th><center>Jenis Bahan</th>
+        <th><center>Tanggal Masuk</th>
+        <th><center>Aksi</th>
+
       </tr>
-      </thead>
-	  
-      <?php $i=1 ?>
+    </thead>
+    <tbody>
+
+       <?php $i=1 ?>
 		  <?php
 	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
 				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_baku where id_bahan_baku like '%".$cari."%'");				
+				  $result = mysqli_query($koneksi ,"select * from bahan_baku where id like '%".$cari."%'");				
 			  }else{
-				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_baku");		
+				  $result = mysqli_query($koneksi, "select * from bahan_baku");		
 			  }
         while($row=mysqli_fetch_assoc($result)){
 		  ?>
       <tr>
          <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id'] ?></td>
-         <td><center><?= $row['id_admin'] ?></td>
-         <td><center><?= $row['id_bahan_baku'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
+         <!--<td><center><?= $row['id'] ?></td>-->
+         <td><center><?= $row['nama'] ?></td>
          <td><center><?= $row['harga'] ?></td>
+         <td><center><?= $row['stok'] ?></td>
+         <td><center><?= $row['jenis_bahan'] ?></td>
          <td><center><?= $row['tgl_masuk'] ?></td>
+         <td>
+		<center>
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a class="btn btn-success" href="edit_bahanbaku.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="hapus_bahanbaku.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+		</div>
+		</center>
+	</td>
+         
       </tr>
       <?php } ?>
    </table>
-   </div>
+</div>
+    </tbody>
+  </table>
+</div>
+
   <!-- /.content-wrapper -->
   </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
 </div>
 <!-- ./wrapper -->
 
