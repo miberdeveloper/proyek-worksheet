@@ -19,7 +19,7 @@
         $query = mysqli_query($koneksi, "SELECT max(id) as maxkode from anggota ");
         $data = mysqli_fetch_array($query);
         $kodeAnggota = $data['maxkode'];
-        $nourut = ++$kodeAnggota;
+        $nourut = $kodeAnggota++;
         $char = $kode;
         $kodeAnggota = $char.sprintf("%05s", $nourut);
         return $kodeAnggota;
@@ -49,7 +49,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=tambah-adm';
+                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-adm';
                 </script>
                     ";
             return false;
@@ -85,7 +85,7 @@
         $email = $data['email'];
         $telepon = $data['telepon'];
         $foto = 'null';
-        $jenis_admin = 1;
+        $jenis_admin = $data['jenis'];
 
 
         $password = mysqli_real_escape_string($koneksi, $data['password']);
@@ -125,6 +125,7 @@
         jenis_kelamin = '$jk',
         email = '$email',
         telepon = '$telepon',
+        jenis_admin = '$jenis_admin',
         password = '$password' WHERE id =  '$id' ";
 
         //tambah data
@@ -166,7 +167,7 @@
             echo "
                 <script>
                     alert('Username sudah ada');
-                    window.location = 'pergudangan.php?page=pergudangan&page2=admin&data=tambah-ang';
+                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-ang';
                 </script>
                     ";
             return false;

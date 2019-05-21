@@ -1,52 +1,45 @@
+<?php 
+    $id = $_REQUEST['id'];
+
+    $data = query("SELECT * FROM admin WHERE id = '$id'")[0];
+?>
 <div class="row">
     <div class="col-md-7 col-xs-12">
         <div class="box">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Pengguna </h3>
+                    <h3 class="box-title">Pengguna</h3>
                 </div>
                 <form role="form" action="" method="POST" enctype="multipart/form-data">
                     <div class="box-body">
                         <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="<?= $data['username'] ?>" required disabled readonly>
+                        </div>
+                        <div class="form-group">
                             <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama" required>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama" value="<?= $data['nama'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                        <textarea type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan alamat" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis">Jenis Admin</label>
-                            <select name="jenis" id="jenis" class="form-control">
-                                <option value="" selected disabled>Pilih jenis admin</option>
-                                <?php 
-                                    $query = query("SELECT * FROM jenis_user");
-                                    foreach ($query as $data) {
-                                ?>
-                                    <option value="<?= $data['id'] ?>"><?= $data['jenis'] ?></option>
-                                <?php } ?>
-                            </select>
+                        <textarea type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukan alamat" required><?= $data['alamat'] ?></textarea>
                         </div>
                         <div class="form-group">
                            <label for="jk">Jenis Kelamin</label>
                            <select name="jk" id="jk" class="form-control">
                               <option value="" disabled selected>Pilih jenis kelamin</option>
-                              <option value="L">Laki-laki</option>
-                              <option value="P">Perempuan</option>
+                              <option value="L" <?= $data['jenis_kelamin'] == 'L' ? 'selected' : '' ?> >Laki-laki</option>
+                              <option value="P" <?= $data['jenis_kelamin'] == 'P' ? 'selected' : '' ?>>Perempuan</option>
                            </select>       
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email" value="" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Masukan email" value="<?= $data['email'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="telepon">Telepon</label>
-                            <input type="text" class="form-control" id="telepon" name="telepon" placeholder="Masukan telepon" value="" required>
+                            <input type="text" class="form-control" id="telepon" name="telepon" placeholder="Masukan telepon" value="<?= $data['telepon'] ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
@@ -62,6 +55,7 @@
                             <p class="help-block">* Maksimal 2 MB</p>
                         </div> -->
                     </div>
+                    <input type="hidden" name="id" value="<?= $id ?>">
                     <div class="box-footer text-center">
                         <button type="submit" name="submit" class="btn btn-primary btn-block">Simpan</button>
                     </div>
@@ -72,17 +66,17 @@
 </div>
 <?php
    if (isset($_POST['submit'])) {
-      if (tambahAdmin($_POST) > 0) {
+      if (editAdmin($_POST) > 0) {
          echo "
          <script>
             alert('Data user berhasil ditambahkan');
-            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
+            document.location.href = 'keuangan.php?page=keuangan&page2=admin&data=adm';
          </script>
          ";
       } else {
          echo "
          <script>
-         // alert('Data gagal ditambahkan');
+            alert('Data gagal ditambahkan');
          // document.location.href = 'tambahjenis.php';            
          </script>
          ";

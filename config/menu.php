@@ -15,8 +15,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?= $page == "personalia" && $statusMenu == "home" ? "active" : "" ?>"><a href="index.php?page=personalia&page2=home"><i class="fa fa-home"></i> Home</a></li>
-            <li class="<?= $page == "personalia" && $statusMenu == "admin" ? "active" : "" ?>"><a href="index.php?page=personalia&page2=admin"><i class="fa fa-user"></i> Admin Site</a></li>
+            <li class="<?= $page == "personalia" && $statusMenu == "home" ? "active" : "" ?>"><a href="personalia.php?page=personalia&page2=home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="<?= $page == "personalia" && $statusMenu == "admin" ? "active" : "" ?>"><a href="personalia.php?page=personalia&page2=admin"><i class="fa fa-user"></i> Admin Site</a></li>
           </ul>
         </li>
         <li class="treeview <?= $page == "keuangan" ? "active" : "" ?>">
@@ -28,8 +28,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?= $page == "keuangan" && $statusMenu == "home" ? "active" : "" ?>"><a href="index.php?page=keuangan&page2=home"><i class="fa fa-home"></i> Home</a></li>
-            <li class="<?= $page == "keuangan" && $statusMenu == "admin" ? "active" : "" ?>"><a href="index.php?page=keuangan&page2=admin"><i class="fa fa-user"></i> Admin Site</a></li>
+            <li class="<?= $page == "keuangan" && $statusMenu == "home" ? "active" : "" ?>"><a href="keuangan.php?page=keuangan&page2=home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="<?= $page == "keuangan" && $statusMenu == "admin" ? "active" : "" ?>"><a href="keuangan.php?page=keuangan&page2=admin"><i class="fa fa-user"></i> Admin Site</a></li>
           </ul>
         </li>
         <li>

@@ -4,8 +4,8 @@
     $data = query("SELECT * FROM admin WHERE id = '$id'")[0];
 ?>
 <div class="row">
+    <div class="box">
     <div class="col-md-7 col-xs-12">
-        <div class="box">
             <div class="box box-primary">
                 <div class="box-header">
                     <h3 class="box-title">Pengguna </h3>
@@ -15,6 +15,20 @@
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="<?= $data['username'] ?>" required disabled readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis">Jenis Admin</label>
+                            
+                            <select name="jenis" id="jenis" class="form-control">
+                                <option value="" selected disabled>Pilih jenis admin</option>
+                                <?php 
+                                    $query = query("SELECT * FROM jenis_user");
+                                    foreach ($query as $row) {
+                                ?>
+                                <option value="<?= $row['id'] ?>" <?= $data['jenis_admin'] == $row['id'] ? 'selected' : '' ?> ><?= $row['jenis'] ?></option>
+
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="nama">Nama</label>
