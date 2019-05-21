@@ -1,5 +1,5 @@
 <?php 
-   $link = "simpanpinjam.php?page=simpanpinjam&page3=admin";
+   $link = "e-commerce.php?page=ecommerce&page2=admin";
    
    $data = $_REQUEST['data'];
 

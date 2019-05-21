@@ -1,8 +1,8 @@
 <?php 
-   $query = query("SELECT * FROM admin a inner join jenis_user j ON a.jenis_admin = j.id WHERE j.jenis = 'pergudangan' ORDER BY a.id");
+   $query = query("SELECT * FROM admin a inner join jenis_user j ON a.jenis_admin = j.id WHERE j.jenis = 'E-Commerce' ORDER BY a.id");
 ?>
 <div class="box">
-   <div class="box-header text-center"><h4>Admin Simpan Pinjam</h4></div>
+   <div class="box-header text-center"><h4>Admin E-Commerce</h4></div>
    <div class="row">
       <div class="col-md-12">
          <div class="box-body table-responsive">

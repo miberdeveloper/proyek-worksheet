@@ -1,20 +1,12 @@
-<?php
-    $nomer = nomerAnggota("AGP");
-?>
-
 <div class="row">
     <div class="col-md-7 col-xs-12">
         <div class="box">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Tambah Anggota </h3>
+                    <h3 class="box-title">Pengguna </h3>
                 </div>
                 <form role="form" action="" method="POST" enctype="multipart/form-data">
                     <div class="box-body">
-                        <div class="form-group">
-                            <label for="nomer_anggota">Nomer Anggota</label>
-                        <input type="text" class="form-control" id="nomer_anggota" name="nomer_anggota" value="<?= $nomer ?>" readonly required>
-                        </div>
                         <div class="form-group">
                             <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan nama" required>
@@ -26,18 +18,6 @@
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" id="username" name="username" placeholder="Masukan username" value="" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis">Jenis Admin</label>
-                            <select name="jenis" id="jenis" class="form-control">
-                                <option value="" selected disabled>Pilih jenis admin</option>
-                                <?php 
-                                    $query = query("SELECT * FROM jenis_user");
-                                    foreach ($query as $data) {
-                                ?>
-                                    <option value="<?= $data['id'] ?>"><?= $data['jenis'] ?></option>
-                                <?php } ?>
-                            </select>
                         </div>
                         <div class="form-group">
                            <label for="jk">Jenis Kelamin</label>
@@ -80,11 +60,11 @@
 </div>
 <?php
    if (isset($_POST['submit'])) {
-      if (tambahAnggota($_POST) > 0) {
+      if (tambahAdmin($_POST) > 0) {
          echo "
          <script>
             alert('Data user berhasil ditambahkan');
-            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
+            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
          </script>
          ";
       } else {

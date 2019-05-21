@@ -1,8 +1,15 @@
 <?php 
-   $query = query("SELECT * FROM anggota a inner join jenis_user j ON a.jenis_anggota = j.id WHERE j.jenis = 'pergudangan' ORDER BY a.id");
+   $query = query("SELECT a.id as 'idAnggota', a.*, j.* FROM anggota a inner join jenis_user j ON a.jenis_anggota = j.id WHERE j.jenis = 'pergudangan' ORDER BY a.id");
+   $link = "simpanpinjam.php?page=simpanpinjam&page3=admin";
+   $dataGet = $_REQUEST['data'];
+
+   if ($dataGet == 'ang') {
 ?>
 <div class="box">
-   <div class="box-header text-center"><h4>Anggota Simpan Pinjam</h4></div>
+   <div class="box-header">
+      <h3 class="box-title">Anggota Simpan Pinjam</h3>
+      <a href="<?= $link. '&data=tambah-ang' ?>" style="float: right" class="btn btn-sm btn-success"><span class="fa fa-plus"></span> Tambah</a>
+   </div>
    <div class="row">
       <div class="col-md-12">
          <div class="box-body table-responsive">
@@ -19,6 +26,7 @@
                      <th>Telepon</th>
                      <th>Tanggal Daftar</th>
                      <th>Status</th>
+                     <th>Aksi</th>
                   </tr>
                </thead>
                <tbody>
@@ -43,6 +51,13 @@
                            <?= $status == 1 ? 'Aktif' : 'Tidak Aktif' ?>
                         </span>
                      </td>
+                     <td>
+                        <div class="btn-group">
+                              <a href="<?= $link .'&data=edit-ang&id='. $data['idAnggota'] ?>" class="btn-sm btn-warning">Edit</a>
+                              <a href="<?= $link .'&data=hapus-ang&id='. $data['idAnggota'] ?>" class="btn-sm btn-danger" onclick="return confirm('Apakah anda yakin ingin menghapus data ini ?')">Hapus</a>
+                        </div>
+                           <a href="<?= $link. '&data=edit-status&id='. $data['idAnggota'] ?>" style="margin-top: 5px;" class="btn btn-info btn-block">Ubah Status</a>
+                     </td>
                   </tr>
                      <?php } ?>
                </tbody>
@@ -52,3 +67,8 @@
       </div>
    </div>
 </div>
+<?php
+   } else {
+      include_once "aksi-admin.php";
+   } 
+?>

@@ -153,7 +153,7 @@
         $email = $data['email'];
         $telepon = $data['telepon'];
         $foto = 'null';
-        $jenis_anggota = 1;
+        $jenis_anggota = $data['jenis'];
         $tgl_daftar = date('Y-m-d');
         $status = 1;
 
@@ -167,7 +167,15 @@
             echo "
                 <script>
                     alert('Username sudah ada');
+<<<<<<< HEAD
                     window.location = 'personalia.php?page=personalia&page2=admin&data=tambah-ang';
+=======
+<<<<<<< HEAD
+                    window.location = 'index.php';
+=======
+                    window.location = 'keuangan.php?page=keuangan&page2=admin&data=tambah-ang';
+>>>>>>> 76876e40b57c12a9a0e49ec043515a5ea6453964
+>>>>>>> 4be8fa8da4b32f3a19289c9baa9dbbe14501eacb
                 </script>
                     ";
             return false;
@@ -202,6 +210,7 @@
         $jk = $data['jk'];
         $email = $data['email'];
         $telepon = $data['telepon'];
+        $jenis_anggota = $data['jenis'];
         $foto = 'null';
         // $jenis_anggota = 1;
         $tgl_daftar = date('Y-m-d');
@@ -242,6 +251,7 @@
         jenis_kelamin = '$jk',
         email = '$email',
         telepon = '$telepon',
+        jenis_anggota = '$jenis_anggota'
         password = '$password' WHERE id =  '$id' ";
 
         //tambah data

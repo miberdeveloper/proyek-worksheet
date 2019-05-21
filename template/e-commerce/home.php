@@ -1,17 +1,17 @@
 <?php
-   $jmlAdmin = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT count(a.jenis_admin) as 'jmlAdmin' FROM admin a inner join jenis_user j ON a.jenis_admin = j.id WHERE j.jenis = 'Pergudangan' group by a.jenis_admin"));
-   $jmlAnggota = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT count(a.jenis_anggota) as 'jmlAnggota' FROM anggota a inner join jenis_user j ON a.jenis_anggota = j.id WHERE j.jenis = 'Pergudangan' AND a.status = 1 group by a.jenis_anggota"));
-   $jmlPinjam = mysqli_fetch_assoc (mysqli_query($koneksi, "SELECT count(id) as 'jmlPinjam' FROM transaksi_pinjam"));
-   $jmlAngsuran = mysqli_fetch_assoc (mysqli_query($koneksi, "SELECT count(id) as 'jmlAngsuran' FROM transaksi_angsuran"));
+   $jmlAdmin = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT count(a.jenis_admin) as 'jmlAdmin' FROM admin a inner join jenis_user j ON a.jenis_admin = j.id WHERE j.jenis = 'E-Commerce' group by a.jenis_admin"));
+   $jmlAnggota = mysqli_fetch_assoc(mysqli_query($koneksi, "SELECT count(a.jenis_anggota) as 'jmlAnggota' FROM anggota a inner join jenis_user j ON a.jenis_anggota = j.id WHERE j.jenis = 'E-Commerce' AND a.status = 1 group by a.jenis_anggota"));
+   $jmlBahanJadi = mysqli_fetch_assoc (mysqli_query($koneksi, "SELECT count(id) as 'jmlBahan' FROM bahan_jadi"));
+   $jmlTransaksi = mysqli_fetch_assoc (mysqli_query($koneksi, "SELECT count(*) as 'jmlTransaksi' FROM jual_anggota"));
 
-   $link = "simpanpinjam.php?page=simpanpinjam&page3=home";
+   $link = "e-commerce.php?page=ecommerce&page2=home";
    
    $data = $_REQUEST['data'];
 ?>
 
 <!-- CONTENT -->
 <div class="row">
-   <div class="col-lg-3 col-xs-12">
+   <div class="col-lg-4 col-xs-12">
       <!-- small box -->
       <div class="small-box bg-blue">
       <div class="inner">
@@ -19,7 +19,7 @@
             <?= $jmlAdmin["jmlAdmin"] ?> Orang
          </h3>
 
-         <p>Admin Simpan Pinjam</p>
+         <p>Admin Pergudangan</p>
       </div>
       <div class="icon">
          <i class="ion ion-person-stalker"></i>
@@ -28,7 +28,7 @@
       </div>
    </div>
    <!-- ./col -->
-   <div class="col-lg-3 col-xs-12">
+   <div class="col-lg-4 col-xs-12">
       <!-- small box -->
       <div class="small-box bg-green">
       <div class="inner">
@@ -44,37 +44,37 @@
       <a href="<?= $link.'&data=ang' ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
    </div>
-   <!-- ./col -->
-   <div class="col-lg-3 col-xs-12">
-      <!-- small box -->
-      <div class="small-box bg-aqua">
-      <div class="inner">
-         <h3>
-            <?= $jmlAngsuran["jmlAngsuran"] ?> Angsuran
-         </h3>
-
-         <p>Jumlah Angsuran</p>
-      </div>
-      <div class="icon">
-         <i class="ion ion-ios-cart"></i>
-      </div>
-      <a href="<?= $link.'&data=angsuran' ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-      </div>
-   </div>
-   <div class="col-lg-3 col-xs-12">
+   <div class="col-lg-4 col-xs-12">
       <!-- small box -->
       <div class="small-box bg-yellow">
       <div class="inner">
          <h3>
-            <?= $jmlPinjam["jmlPinjam"] ?> Pinjaman
+            <?= $jmlBahanJadi["jmlBahan"] ?> Bahan
          </h3>
 
-         <p>Jumlah Pinjaman</p>
+         <p>Jumlah Bahan Jadi</p>
       </div>
       <div class="icon">
          <i class="ion ion-ios-cart"></i>
       </div>
-      <a href="<?= $link.'&data=pinjaman' ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="<?= $link.'&data=bhn-jadi' ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+   </div>
+   <!-- ./col -->
+   <div class="col-lg-12 col-xs-12">
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+      <div class="inner">
+         <h3>
+            <?= $jmlTransaksi["jmlTransaksi"] ?> Transaksi
+         </h3>
+
+         <p>Transaksi</p>
+      </div>
+      <div class="icon">
+         <i class="ion ion-ios-barcode"></i>
+      </div>
+      <a href="<?= $link.'&data=transaksi' ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
       </div>
    </div>
         <!-- ./col -->
@@ -88,11 +88,11 @@
             case 'ang':
                include_once "anggota-table.php";
                break;
-            case 'angsuran':
-               include_once "angsuran-table.php";
+            case 'bhn-jadi':
+               include_once "bahanjadi-table.php";
                break;
-            case 'pinjaman':
-               include_once "peminjaman-table.php";
+            case 'transaksi':
+               include_once "transaksi-table.php";
                break;
             
             default:
