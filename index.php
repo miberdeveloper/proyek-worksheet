@@ -341,13 +341,18 @@
             <small class="label pull-right bg-green"></small>
             </span>
           </a>
-        <li>
-          <a href="btp.php">
-            <i class="fa fa-th"></i> <span>Bukti Transaksi Penjualan</span>
+          <li class="treeview">
+          <a href="index.php">
+            <i class="fa fa-th"></i>
+            <span>Bukti Transaksi</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="btpbk.php"><i class="fa fa-circle-o"></i>BT Bahan Baku</a></li>
+            <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
+          </ul>
         </li>
         <li>
           <a href="btp.php">

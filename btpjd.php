@@ -292,13 +292,18 @@
             <small class="label pull-right bg-green"></small>
             </span>
           </a>
-        <li>
-          <a href="btp.php">
-            <i class="fa fa-th"></i> <span>Bukti Transaksi Penjualan</span>
+          <li class="treeview">
+          <a href="index.php">
+            <i class="fa fa-th"></i>
+            <span>Bukti Transaksi</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="btpbk.php"><i class="fa fa-circle-o"></i>BT Bahan Baku</a></li>
+            <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
+          </ul>
         </li>
         <li>
           <a href="btp.php">
@@ -332,22 +337,25 @@
 	
 ?>
  <div class="table-users">
-   <h2><div class="header">Bukti Transaksi Barang Jadi</div></h2>
-   <a href="printbtpjd.php">PRINT BUKTI TRANSAKSI BARANG JADI</a>
+   <h2><center><div class="header">Bukti Transaksi Barang Jadi</div></h2>
+   <center><a href="printbtpjd.php" class="btn btn-info" role="button">PRINT</a>
    
-   <table cellspacing="0">
-      <tr>
-         <th width="100"><center>NO</th>
-         <th width="220"><center>ID ADMIN</th>
-         <th width="180"><center>ID B_JADI</th>
-         <th width="180"><center>STOK</th>
-         <th width="180"><center>HARGA</th>
-         <th width="380"><center>TOTAL</th>
+   <table class="table table-striped">
+   <thead>
+   <tr>
+         <th width="150"><center>NO</th>
+         <th width="150"><center>ID</th>
+         <th width="150"><center>ID ADMIN</th>
+         <th width="150"><center>ID B_JADI</th>
+         <th width="150"><center>STOK</th>
+         <th width="150"><center>HARGA</th>
+         <th width="150"><center>TGL_MASUK</th>
       </tr>
+      </thead>
 	  
       <?php $i=1 ?>
 		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
+	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
 				  $cari = $_GET['cari'];
 				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_jadi where id_bahan_jadi like '%".$cari."%'");				
@@ -358,52 +366,16 @@
 		  ?>
       <tr>
          <td><center><?= $i++ ?></td>
+         <td><center><?= $row['id'] ?></td>
          <td><center><?= $row['id_admin'] ?></td>
          <td><center><?= $row['id_bahan_jadi'] ?></td>
          <td><center><?= $row['stok'] ?></td>
          <td><center><?= $row['harga'] ?></td>
-         <td><?= $row['total'] ?></td>
+         <td><center><?= $row['tgl_masuk'] ?></td>
       </tr>
       <?php } ?>
    </table>
 </div>
-
- <div class="table-users">
-   <h2><div class="header">Bukti Transaksi Barang Baku</div></h2>
-   <a href="printbtpbk.php">PRINT BUKTI TRANSAKSI BARANG BAKU</a>
-
-      <table cellspacing="0">
-      <tr>
-         <th width="100"><center>NO</th>
-         <th width="220"><center>ID ADMIN</th>
-         <th width="180"><center>ID B_BAKU</th>
-         <th width="180"><center>STOK</th>
-         <th width="180"><center>HARGA</th>
-         <th width="380"><center>TOTAL</th>
-      </tr>
-	  
-      <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "miberdev");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_baku where id_bahan_baku like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_baku");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id_admin'] ?></td>
-         <td><center><?= $row['id_bahan_baku'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><?= $row['total'] ?></td>
-      </tr>
-      <?php } ?>
-   </table>
-   </div>
   <!-- /.content-wrapper -->
   </div>
   <footer class="main-footer">
