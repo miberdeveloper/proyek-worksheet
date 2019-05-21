@@ -75,7 +75,7 @@
          echo "
          <script>
             alert('Data user berhasil dirubah');
-            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
+            document.location.href = 'simpanpinjam.php?page=simpanpinjam&page3=admin&data=ang';
          </script>
          ";
       } else {

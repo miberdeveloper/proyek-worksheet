@@ -16,7 +16,7 @@ if (isset($data)) {
                echo "
                <script>
                   alert('Data berhasil dihapus');
-                  document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=adm';
+                  document.location.href = 'simpanpinjam.php?page=simpanpinjam&page3=admin&data=adm';
                </script>
                ";
             } else {
@@ -43,7 +43,7 @@ if (isset($data)) {
                echo "
                <script>
                   alert('Data berhasil dihapus');
-                  document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
+                  document.location.href = 'simpanpinjam.php?page=simpanpinjam&page3=admin&data=ang';
                </script>
                ";
             } else {
