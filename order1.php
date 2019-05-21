@@ -1,14 +1,9 @@
-<?php
-include "koneksi.php"; // memanggil file koneksi.php untuk menghubungkan ke database
-//memberikan perintah query sql menampilkan data berdasarkan id yang dipilih
-$data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
-?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Pergudangan | Dashboard</title>
+  <title>Admin | Pergudangan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -50,7 +45,7 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><b>A</b>G</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Admin</b>Gudang</span>
     </a>
@@ -93,7 +88,7 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
                         <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        AdminLTE Design Team
+                        Admin Gudang Design Team
                         <small><i class="fa fa-clock-o"></i> 2 hours</small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
@@ -260,55 +255,6 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
               </li>
             </ul>
           </li>
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/coba.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Rachmad Roudis S.</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  Rachmad Roudis S. - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -317,10 +263,10 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Rachmad Roudis S.</p>
+          <p>Prestyan Yudatama</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -366,89 +312,109 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
         </li>
     </section>
     <!-- /.sidebar -->
-  </aside>
+</aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
-    <div id="index"> <!-- memanggil css index -->
-    <div class="container"> <!-- tampilan kotak luar agar tidak full -->
-    <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="edit_prosesbahanbaku.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
-            <tr>
-            <th colspan="2" scope="row"><h2><center><b>Update Bahan Baku</b></center></h2></th> <!-- judul pada tabel -->
-            </tr>
+    <?php
+    // membuat koneksi
+    $conn=mysqli_connect("localhost","root","","miberdev");
+    // mengambil data tabel mahasiswa
+    $result=mysqli_query($conn, "SELECT * FROM transaksi_masuk_bahan_jadi");
+	// var_dump($result);
+	
+?>
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>STOK</title>
+  <meta charset="utf-8">
+  <meta name="viewport" >
+ 
+  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Id</th> <!-- kolom baju -->
-            <td><input type="text" name="id" value="<?php echo $_GET['id'];?>"> 
-            </tr></center>
-            </div>
+<link rel="stylesheet" type="text/css" href="list.css">
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
-            <td><input type="text" name="nama" value="<?php echo $data['nama'];?>"> 
-            </tr></center>
-            </div>
+<!-- header and footer -->
+<div id="container"> 
+    <div id="header" >
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Harga</th> <!-- kolom baju -->
-            <td><input type="text" name="harga" value="<?php echo $data['harga'];?>"> 
-            </tr></center>
-            </div>
+<form ction="tambah_stok.php" method="post">
+<div class="container text-center">    
+<div class="row">
+<div class="col-sm-20">    
+<div class="row">
+<div class="panel panel-default text-left">
+            <div class="panel-body">
+              <div class="container">
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Stok</th> <!-- kolom baju -->
-            <td><input type="number" name="stok" value="<?php echo $data['stok'];?>"></td>
-            </tr><center>
-            </div>
+   <center><h2>Bahan Jadi</h2></center><br>
+  <a href="CRUD_bahanjadi.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
+   <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><center>Nomor</th>
+        <th><center>Nama</th>
+        <th><center>Harga</th>
+        <th><center>Stok</th>
+        <th><center>Jenis Bahan</th>
+        <th><center>Keterangan</th>
+        <th><center>Tanggal Masuk</th>
+        <th><center>Aksi</th>
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Bahan</th> <!-- kolom baju -->
-            <td><input type="number" name="jenis_bahan" value="<?php echo $data['jenis_bahan'];?>"></td>
-            </tr></center>
-            </div>
-            <tr>
+      </tr>
+    </thead>
+    <tbody>
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Tanggal Masuk</th> <!-- kolom baju -->
-            <td><input type="date" name="tgl_masuk" value="<?php echo $data['tgl_masuk'];?>"></td></td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <center><button type="submit" name="update" class="btn btn-primary">Edit</button></center>
-            <p><center><a href="order.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
-            </tr>
-            
-        </div>
-    </div>
+       <?php $i=1 ?>
+		  <?php
+	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
+			  if(isset($_GET['tombolcari'])){
+				  $cari = $_GET['cari'];
+				  $result = mysqli_query($koneksi ,"select * from bahan_jadi where id like '%".$cari."%'");				
+			  }else{
+				  $result = mysqli_query($koneksi, "select * from bahan_jadi");		
+			  }
+        while($row=mysqli_fetch_assoc($result)){
+		  ?>
+      <tr>
+         <td><center><?= $i++ ?></td>
+         <!--<td><center><?= $row['id'] ?></td>-->
+         <td><center><?= $row['nama'] ?></td>
+         <td><center><?= $row['harga'] ?></td>
+         <td><center><?= $row['stok'] ?></td>
+         <td><center><?= $row['jenis_bahan'] ?></td>
+         <td><center><?= $row['keterangan'] ?></td>
+         <td><center><?= $row['tgl_masuk'] ?></td>
+         <td>
+		<center>
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a class="btn btn-success" href="edit_bahanjadi.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="hapus_bahanjadi.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+		</div>
+		</center>
+	</td>
+         
+      </tr>
+      <?php } ?>
+   </table>
+</div>
+    </tbody>
+  </table>
 </div>
 
   <!-- /.content-wrapper -->
+  </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->

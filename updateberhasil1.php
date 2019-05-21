@@ -1,8 +1,3 @@
-<?php
-include "koneksi.php"; // memanggil file koneksi.php untuk menghubungkan ke database
-//memberikan perintah query sql menampilkan data berdasarkan id yang dipilih
-$data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -381,65 +376,13 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
         <li class="active">Dashboard</li>
       </ol>
     </section>
-    <div id="index"> <!-- memanggil css index -->
-    <div class="container"> <!-- tampilan kotak luar agar tidak full -->
-    <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="edit_prosesbahanbaku.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
-            <tr>
-            <th colspan="2" scope="row"><h2><center><b>Update Bahan Baku</b></center></h2></th> <!-- judul pada tabel -->
-            </tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Id</th> <!-- kolom baju -->
-            <td><input type="text" name="id" value="<?php echo $_GET['id'];?>"> 
-            </tr></center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
-            <td><input type="text" name="nama" value="<?php echo $data['nama'];?>"> 
-            </tr></center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Harga</th> <!-- kolom baju -->
-            <td><input type="text" name="harga" value="<?php echo $data['harga'];?>"> 
-            </tr></center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Stok</th> <!-- kolom baju -->
-            <td><input type="number" name="stok" value="<?php echo $data['stok'];?>"></td>
-            </tr><center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Bahan</th> <!-- kolom baju -->
-            <td><input type="number" name="jenis_bahan" value="<?php echo $data['jenis_bahan'];?>"></td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Tanggal Masuk</th> <!-- kolom baju -->
-            <td><input type="date" name="tgl_masuk" value="<?php echo $data['tgl_masuk'];?>"></td></td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <center><button type="submit" name="update" class="btn btn-primary">Edit</button></center>
-            <p><center><a href="order.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
-            </tr>
-            
-        </div>
-    </div>
-</div>
+    <br><br>
+    <div class="container">
+<div class="jumbotron">
+    <h2 class="display-4">Berhasil Update Data!!!</h2> <!-- isi dari class jumbotron -->
+    <hr class="my-4">
+    <a class="btn btn-info" href="order1.php" role="button">BACK</a> <!-- tampilan back bewarna hijau dan kembali ke tampil.php -->
+    <p>
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">

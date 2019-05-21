@@ -294,7 +294,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="order.php"><i class="fa fa-circle-o"></i>Order Bahan Baku</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i>Order Bahan Jadi</a></li>
+            <li><a href="order1.php"><i class="fa fa-circle-o"></i>Order Bahan Jadi</a></li>
           </ul>
         </li>
           <li class="treeview">
