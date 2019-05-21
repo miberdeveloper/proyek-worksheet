@@ -338,33 +338,31 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li>
-          <a href="order.php">
-            <i class="fa fa-dashboard"></i> <span>Order Barang</span>
+        <li class="treeview">
+          <a href="index.php">
+            <i class="fa fa-th"></i>
+            <span>Order Barang</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="order.php"><i class="fa fa-circle-o"></i>Order Bahan Baku</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Order Bahan Jadi</a></li>
+          </ul>
         </li>
-        <li>
-          <a href="btp.php">
-            <i class="fa fa-dashboard"></i> <span>Bukti Transaksi Penjualan</span>
+          <li class="treeview">
+          <a href="index.php">
+            <i class="fa fa-th"></i>
+            <span>Bukti Transaksi</span>
             <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Penjualan Barang</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Laporan Penjualan</span>
-            <span class="pull-right-container">
-            </span>
-          </a>
+          <ul class="treeview-menu">
+            <li><a href="btpbk.php"><i class="fa fa-circle-o"></i>BT Bahan Baku</a></li>
+            <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
+          </ul>
         </li>
     </section>
     <!-- /.sidebar -->

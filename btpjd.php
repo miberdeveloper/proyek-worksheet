@@ -285,13 +285,18 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="treeview">
-          <a href="order.php">
+          <a href="index.php">
             <i class="fa fa-th"></i>
             <span>Order Barang</span>
             <span class="pull-right-container">
-            <small class="label pull-right bg-green"></small>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="order.php"><i class="fa fa-circle-o"></i>Order Bahan Baku</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i>Order Bahan Jadi</a></li>
+          </ul>
+        </li>
           <li class="treeview">
           <a href="index.php">
             <i class="fa fa-th"></i>
@@ -304,22 +309,6 @@
             <li><a href="btpbk.php"><i class="fa fa-circle-o"></i>BT Bahan Baku</a></li>
             <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
           </ul>
-        </li>
-        <li>
-          <a href="btp.php">
-            <i class="fa fa-th"></i> <span>Penjualan Barang</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="btp.php">
-            <i class="fa fa-th"></i> <span>Laporan Penjualan</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
-            </span>
-          </a>
         </li>
     </section>
     <!-- /.sidebar -->
