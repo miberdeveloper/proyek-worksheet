@@ -28,7 +28,7 @@
          echo "
          <script>
             alert('Status berhasil dirubah');
-            document.location.href = 'e-commerce.php?page=ecommerce&page2=admin&data=ang';
+            document.location.href = 'pergudangan.php?page=pergudangan&page2=admin&data=ang';
          </script>
          ";
       } else {

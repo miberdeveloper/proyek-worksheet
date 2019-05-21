@@ -1,5 +1,5 @@
 <?php 
-   $link = "keuangan.php?page=keuangan&page2=admin";
+   $link = "e-commerce.php?page=ecommerce&page2=admin";
    
    $data = $_REQUEST['data'];
 
@@ -39,23 +39,6 @@
       </a>
    </div>
 </div>
-<div class="row">
-   <div class="col-lg-6 col-xs-12">
-      <!-- small box -->
-      <a href="<?=$link. ''?>">
-         <div class="small-box bg-green">
-            <div class="inner">
-               <h3>
-                  Laporan Keuangan
-               </h3>
-               <p>&nbsp;</p>
-            </div>
-            <div class="icon">
-               <i class="ion ion-calculator"></i>
-            </div>
-         </div>
-      </a>
-   </div>
 <?php
    } else {
       switch ($data) {

@@ -22,7 +22,7 @@
         <li class="treeview <?= $page == "keuangan" ? "active" : "" ?>">
         <!-- diatas aktif default active  -->
           <a href="#">
-            <i class="fa fa-money"></i> <span>Keuangan</span>
+            <i class="fa fa-random"></i> <span>Keuangan</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -68,8 +68,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="<?= $page == "ecommerce" && $statusMenu == "home" ? "active" : "" ?>"><a href="index.php?page=ecommerce&page2=home"><i class="fa fa-home"></i> Home</a></li>
-            <li class="<?= $page == "ecommerce" && $statusMenu == "admin" ? "active" : "" ?>"><a href="index.php?page=ecommerce&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
+            <li class="<?= $page == "ecommerce" && $statusMenu == "home" ? "active" : "" ?>"><a href="e-commerce.php?page=ecommerce&page2=home"><i class="fa fa-home"></i> Home</a></li>
+            <li class="<?= $page == "ecommerce" && $statusMenu == "admin" ? "active" : "" ?>"><a href="e-commerce.php?page=ecommerce&page2=admin"><i class="fa fa-users"></i> Admin Site</a></li>
           </ul>
         </li>
       <ul>
