@@ -9,21 +9,21 @@ if(isset($_POST['tambah'])){
 	
 	//jika tombol tambah benar di klik maka lanjut prosesnya
 	//membuat variabel $nis dan datanya dari inputan NIS
-	// $namalengkap	= $_POST['NamaLengkap'];	//membuat variabel $nama dan datanya dari inputan Nama Lengkap
-	$nama		    = $_POST['nama'];
-	$harga		    = $_POST['harga'];
-	$stok 			= $_POST['stok'];
-    $jenis_bahan 	= $_POST['jenis_bahan'];
+    // $namalengkap	= $_POST['NamaLengkap'];	//membuat variabel $nama dan datanya dari inputan Nama Lengkap
+    $id_admin		    = $_POST['id_admin'];
+	$id_bb		    = $_POST['id_bb'];
+    $stok 			= $_POST['stok'];
+    $harga		    = $_POST['harga'];
     $tgl_masuk 		= $_POST['tgl_masuk'];
 	//melakukan query dengan perintah INSERT INTO untuk memasukkan data ke database
-	$query = "INSERT INTO bahan_baku VALUES ( '','$nama', '$harga', '$stok', '$jenis_bahan', '$tgl_masuk')";
+	$query = "INSERT INTO transaksi_masuk_bahan_baku VALUES ( '','$id_admin', '$id_bb', '$stok', '$harga', '$tgl_masuk')";
 	$input = mysqli_query($mysqli,$query) or die(mysqli_error($mysqli));
 	
 	//jika query input sukses
 	if($input){
 		
 
-		echo "<meta http-equiv=\"refresh\" content=\"0;URL=order.php\">";
+		echo "<meta http-equiv=\"refresh\" content=\"0;URL=btpbk.php\">";
 		 // echo ("<SCRIPT LANGUAGE='JavaScript'>
    //  window.alert('Succesfully Registered')
    //  window.location.href='c_crud_jadwal.php';
@@ -34,7 +34,7 @@ if(isset($_POST['tambah'])){
 	}else{
 		
 		echo 'Gagal menambahkan data! ';		//Pesan jika proses tambah gagal
-		echo '<a href="tambah_bahanbaku.php">Kembali</a>';	//membuat Link untuk kembali ke halaman tambah
+		echo '<a href="tambah_btpbk.php">Kembali</a>';	//membuat Link untuk kembali ke halaman tambah
 		
 	}
  

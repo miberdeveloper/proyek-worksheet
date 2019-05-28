@@ -266,7 +266,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Rachmad Roudis S.</p>
+          <p>Renaldy Ardiansyah</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -324,111 +324,32 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php
-    // membuat koneksi
-    $conn=mysqli_connect("localhost","root","","miberdev");
-    // mengambil data tabel mahasiswa
-    $result=mysqli_query($conn, "SELECT * FROM transaksi_masuk_bahan_jadi");
-	// var_dump($result);
-	
-?>
-<div class="table-users">
- <div class="right-area">
-				<div class="src-area">
-					<form action="" method="GET">
-						<input class="src-input" type="text" name="cari" placeholder="Search">
-						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
-				</div><!-- src-area -->
-			</div><!-- right-area -->
-  <!DOCTYPE html>
-<html>
-<head>
-  <title>STOK</title>
-  <meta charset="utf-8">
-  <meta name="viewport" >
- 
-  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</head>
-
-<link rel="stylesheet" type="text/css" href="list.css">
-
-<!-- header and footer -->
-<div id="container"> 
-    <div id="header" >
-
-<form ction="tambah_bahanbaku.php" method="post">
-<div class="container text-center">    
-<div class="row">
-<div class="col-sm-20">    
-<div class="row">
-<div class="panel panel-default text-left">
-            <div class="panel-body">
-              <div class="container">
-
-   <center><h2>Bahan Baku</h2></center><br>
-  <a href="CRUD_bahanbaku.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
-   <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><center>Nomor</th>
-        <th><center>Id</th>
-        <th><center>Nama</th>
-        <th><center>Harga</th>
-        <th><center>Stok</th>
-        <th><center>Jenis Bahan</th>
-        <th><center>Tanggal Masuk</th>
-        <th><center>Aksi</th>
-
-      </tr>
-    </thead>
-    <tbody>
-
-       <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from bahan_baku where id like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from bahan_baku");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id'] ?></td>
-         <td><center><?= $row['nama'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['jenis_bahan'] ?></td>
-         <td><center><?= $row['tgl_masuk'] ?></td>
-         <td>
-		<center>
-		<div class="btn-group" role="group" aria-label="Basic example">
-			<a class="btn btn-success" href="edit_bahanbaku.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
-			<a class="btn btn-danger" href="hapus_bahanbaku.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
-		</div>
-		</center>
-	</td>
-         
-      </tr>
-      <?php } ?>
-   </table>
-</div>
-    </tbody>
-  </table>
-</div>
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <br><br>
+    <div class="container">
+<div class="jumbotron">
+    <h2 class="display-4">Berhasil Update Data!!!</h2> <!-- isi dari class jumbotron -->
+    <hr class="my-4">
+    <a class="btn btn-info" href="btpjd.php" role="button">BACK</a> <!-- tampilan back bewarna hijau dan kembali ke tampil.php -->
+    <p>
 
   <!-- /.content-wrapper -->
-  </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
-</div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->

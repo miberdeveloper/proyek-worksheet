@@ -1,3 +1,8 @@
+<?php
+include "koneksi.php"; // memanggil file koneksi.php untuk menghubungkan ke database
+//memberikan perintah query sql menampilkan data berdasarkan id yang dipilih
+$data = query("SELECT * FROM transaksi_masuk_bahan_jadi WHERE id='$_GET[id]' ")[0];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -266,7 +271,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Rachmad Roudis S.</p>
+          <p>Renaldy Ardiansyah</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -324,111 +329,84 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php
-    // membuat koneksi
-    $conn=mysqli_connect("localhost","root","","miberdev");
-    // mengambil data tabel mahasiswa
-    $result=mysqli_query($conn, "SELECT * FROM transaksi_masuk_bahan_jadi");
-	// var_dump($result);
-	
-?>
-<div class="table-users">
- <div class="right-area">
-				<div class="src-area">
-					<form action="" method="GET">
-						<input class="src-input" type="text" name="cari" placeholder="Search">
-						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
-				</div><!-- src-area -->
-			</div><!-- right-area -->
-  <!DOCTYPE html>
-<html>
-<head>
-  <title>STOK</title>
-  <meta charset="utf-8">
-  <meta name="viewport" >
- 
-  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</head>
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <div id="index"> <!-- memanggil css index -->
+    <div class="container"> <!-- tampilan kotak luar agar tidak full -->
+    <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
+        <form action="edit_prosesbtpjd.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+            <tr>
+            <th colspan="2" scope="row"><h2><center><b>Update Bukti Transaksi Bahan Baku</b></center></h2></th> <!-- judul pada tabel -->
+            </tr>
 
-<link rel="stylesheet" type="text/css" href="list.css">
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">ID</th> <!-- kolom baju -->
+            <td><input type="text" name="id" value="<?php echo $_GET['id'];?>"> 
+            </tr></center>
+            </div>
 
-<!-- header and footer -->
-<div id="container"> 
-    <div id="header" >
+          <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">ID Admin</th> <!-- kolom baju -->
+            <td><input type="text" name="id_admin" value="<?php echo $data['id_admin'];?>"> 
+            </tr></center>
+            </div>
 
-<form ction="tambah_bahanbaku.php" method="post">
-<div class="container text-center">    
-<div class="row">
-<div class="col-sm-20">    
-<div class="row">
-<div class="panel panel-default text-left">
-            <div class="panel-body">
-              <div class="container">
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">ID Bahan Jadi</th> <!-- kolom baju -->
+            <td><input type="text" name="id_bahan_jadi" value="<?php echo $data['id_bahan_jadi'];?>"> 
+            </tr></center>
+            </div>
 
-   <center><h2>Bahan Baku</h2></center><br>
-  <a href="CRUD_bahanbaku.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
-   <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><center>Nomor</th>
-        <th><center>Id</th>
-        <th><center>Nama</th>
-        <th><center>Harga</th>
-        <th><center>Stok</th>
-        <th><center>Jenis Bahan</th>
-        <th><center>Tanggal Masuk</th>
-        <th><center>Aksi</th>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Stok</th> <!-- kolom baju -->
+            <td><input type="number" name="stok" value="<?php echo $data['stok'];?>"></td>
+            </tr><center>
+            </div>
 
-      </tr>
-    </thead>
-    <tbody>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Harga</th> <!-- kolom baju -->
+            <td><input type="number" name="harga" value="<?php echo $data['harga'];?>"></td>
+            </tr></center>
+            </div>
+            <tr>
 
-       <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from bahan_baku where id like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from bahan_baku");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id'] ?></td>
-         <td><center><?= $row['nama'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['jenis_bahan'] ?></td>
-         <td><center><?= $row['tgl_masuk'] ?></td>
-         <td>
-		<center>
-		<div class="btn-group" role="group" aria-label="Basic example">
-			<a class="btn btn-success" href="edit_bahanbaku.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
-			<a class="btn btn-danger" href="hapus_bahanbaku.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
-		</div>
-		</center>
-	</td>
-         
-      </tr>
-      <?php } ?>
-   </table>
-</div>
-    </tbody>
-  </table>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Tanggal Masuk</th> <!-- kolom baju -->
+            <td><input type="date" name="tgl_masuk" value="<?php echo $data['tgl_masuk'];?>"></td></td>
+            </tr></center>
+            </div>
+            <tr>
+
+            <center><button type="submit" name="update" class="btn btn-primary">Edit</button></center>
+            <p><center><a href="btpjd.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
+            </tr>
+            
+        </div>
+    </div>
 </div>
 
   <!-- /.content-wrapper -->
-  </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
-</div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->

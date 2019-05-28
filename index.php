@@ -380,20 +380,41 @@
 	// var_dump($result);
 	
 ?>
- <div class="table-users">
-   <h2><center><div class="header">Bukti Transaksi Barang Baku</div></h2>
+  <div class="table-users">
+ <div class="right-area">
+				<div class="src-area">
+					<form action="" method="GET">
+						<input class="src-input" type="text" name="cari" placeholder="Search">
+						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
+				</div><!-- src-area -->
+			</div><!-- right-area -->
+      <div id="container"> 
+    <div id="header" >
+
+<form ction="tambah_btpbk.php" method="post">
+<div class="container text-center">    
+<div class="row">
+<div class="col-sm-20">    
+<div class="row">
+<div class="panel panel-default text-left">
+            <div class="panel-body">
+              <div class="container">
+   <h2><center><div class="header">Bukti Transaksi Bahan Baku</div></h2>
    <center><a href="printbtpbk.php" class="btn btn-info" role="button">PRINT</a>
+   <a href="CRUD_btpbk.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
+
 
        <table class="table table-striped">
        <thead>
       <tr>
-         <th width="150"><center>NO</th>
-         <th width="150"><center>ID</th>
+         <th width="120"><center>NO</th>
+         <th width="120"><center>ID</th>
          <th width="150"><center>ID ADMIN</th>
          <th width="150"><center>ID B_BAKU</th>
          <th width="150"><center>STOK</th>
          <th width="150"><center>HARGA</th>
          <th width="150"><center>TGL_MASUK</th>
+         <th width="150"><center>AKSI</th>
       </tr>
       </thead>
 	  
@@ -401,7 +422,8 @@
 		  <?php
 	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
+          $cari = $_GET['cari'];
+          print_r($cari);
 				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_baku where id_bahan_baku like '%".$cari."%'");				
 			  }else{
 				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_baku");		
@@ -416,12 +438,18 @@
          <td><center><?= $row['stok'] ?></td>
          <td><center><?= $row['harga'] ?></td>
          <td><center><?= $row['tgl_masuk'] ?></td>
-      </tr>
+         <td>
+      <center>
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a class="btn btn-success" href="edit_btpbk.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="hapus_btpbk.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+		</div>
+		</center>
+    </td>
+    </tr>
       <?php } ?>
    </table>
    </div>
-    <!-- /.content -->
-  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">

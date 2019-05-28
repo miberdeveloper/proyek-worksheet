@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin | Pergudangan</title>
+  <title>Pergudangan | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -45,7 +45,7 @@
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>G</span>
+      <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Admin</b>Gudang</span>
     </a>
@@ -88,7 +88,7 @@
                         <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
-                        Admin Gudang Design Team
+                        AdminLTE Design Team
                         <small><i class="fa fa-clock-o"></i> 2 hours</small>
                       </h4>
                       <p>Why not buy a new awesome theme?</p>
@@ -255,6 +255,55 @@
               </li>
             </ul>
           </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="dist/img/coba.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Rachmad Roudis S.</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Rachmad Roudis S. - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -263,7 +312,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>Rachmad Roudis S.</p>
@@ -319,116 +368,37 @@
         </li>
     </section>
     <!-- /.sidebar -->
-</aside>
+  </aside>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php
-    // membuat koneksi
-    $conn=mysqli_connect("localhost","root","","miberdev");
-    // mengambil data tabel mahasiswa
-    $result=mysqli_query($conn, "SELECT * FROM transaksi_masuk_bahan_jadi");
-	// var_dump($result);
-	
-?>
-<div class="table-users">
- <div class="right-area">
-				<div class="src-area">
-					<form action="" method="GET">
-						<input class="src-input" type="text" name="cari" placeholder="Search">
-						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
-				</div><!-- src-area -->
-			</div><!-- right-area -->
-  <!DOCTYPE html>
-<html>
-<head>
-  <title>STOK</title>
-  <meta charset="utf-8">
-  <meta name="viewport" >
- 
-  <link rel="stylesheet" href="css/bootstrap.min.css"> <!-- css -->
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-</head>
-
-<link rel="stylesheet" type="text/css" href="list.css">
-
-<!-- header and footer -->
-<div id="container"> 
-    <div id="header" >
-
-<form ction="tambah_bahanbaku.php" method="post">
-<div class="container text-center">    
-<div class="row">
-<div class="col-sm-20">    
-<div class="row">
-<div class="panel panel-default text-left">
-            <div class="panel-body">
-              <div class="container">
-
-   <center><h2>Bahan Baku</h2></center><br>
-  <a href="CRUD_bahanbaku.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
-   <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><center>Nomor</th>
-        <th><center>Id</th>
-        <th><center>Nama</th>
-        <th><center>Harga</th>
-        <th><center>Stok</th>
-        <th><center>Jenis Bahan</th>
-        <th><center>Tanggal Masuk</th>
-        <th><center>Aksi</th>
-
-      </tr>
-    </thead>
-    <tbody>
-
-       <?php $i=1 ?>
-		  <?php
-	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
-			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from bahan_baku where id like '%".$cari."%'");				
-			  }else{
-				  $result = mysqli_query($koneksi, "select * from bahan_baku");		
-			  }
-        while($row=mysqli_fetch_assoc($result)){
-		  ?>
-      <tr>
-         <td><center><?= $i++ ?></td>
-         <td><center><?= $row['id'] ?></td>
-         <td><center><?= $row['nama'] ?></td>
-         <td><center><?= $row['harga'] ?></td>
-         <td><center><?= $row['stok'] ?></td>
-         <td><center><?= $row['jenis_bahan'] ?></td>
-         <td><center><?= $row['tgl_masuk'] ?></td>
-         <td>
-		<center>
-		<div class="btn-group" role="group" aria-label="Basic example">
-			<a class="btn btn-success" href="edit_bahanbaku.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
-			<a class="btn btn-danger" href="hapus_bahanbaku.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
-		</div>
-		</center>
-	</td>
-         
-      </tr>
-      <?php } ?>
-   </table>
-</div>
-    </tbody>
-  </table>
-</div>
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+    <br><br>
+    <div class="container">
+<div class="jumbotron">
+    <h2 class="display-4">Berhasil Update Data!!!</h2> <!-- isi dari class jumbotron -->
+    <hr class="my-4">
+    <a class="btn btn-info" href="jenisbahan.php" role="button">BACK</a> <!-- tampilan back bewarna hijau dan kembali ke tampil.php -->
+    <p>
 
   <!-- /.content-wrapper -->
-  </div>
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights reserved.
-</div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->

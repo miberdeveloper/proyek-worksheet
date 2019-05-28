@@ -310,6 +310,13 @@
             <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
           </ul>
         </li>
+        <li>
+          <a href="jenisbahan.php">
+            <i class="fa fa-th"></i> <span>Jenis Bahan</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
 </aside>
@@ -343,7 +350,7 @@
 <div id="container"> 
     <div id="header" >
 
-<form ction="tambah_jenisbahan.php" method="post">
+<form action="tambah_jenisbahan.php" method="post">
 <div class="container text-center">    
 <div class="row">
 <div class="col-sm-20">    
@@ -357,6 +364,7 @@
    <table class="table table-striped">
     <thead>
       <tr>
+      <th><center>Nomor</th>
         <th><center>Id</th>
         <th><center>Jenis</th>
 
@@ -377,7 +385,7 @@
 		  ?>
       <tr>
          <td><center><?= $i++ ?></td>
-         <!--<td><center><?= $row['id'] ?></td>-->
+         <td><center><?= $row['id'] ?></td>
          <td><center><?= $row['jenis'] ?></td>
          <td>
 		<center>
