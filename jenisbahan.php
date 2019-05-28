@@ -332,6 +332,14 @@
 	// var_dump($result);
 	
 ?>
+ <div class="table-users">
+ <div class="right-area">
+				<div class="src-area">
+					<form action="" method="GET">
+						<input class="src-input" type="text" name="cari" placeholder="Search">
+						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
+				</div><!-- src-area -->
+			</div><!-- right-area -->
   <!DOCTYPE html>
 <html>
 <head>
@@ -367,6 +375,7 @@
       <th><center>Nomor</th>
         <th><center>Id</th>
         <th><center>Jenis</th>
+        <th><center>Aksi</th>
 
       </tr>
     </thead>
