@@ -258,8 +258,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/coba.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Fryza Rachmania M</span>
+              <img src="dist/img/coba1.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">M Zaki</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -267,7 +267,7 @@
                 <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Fryza Rachmania M - Web Developer
+                  M Zaki - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -312,10 +312,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/coba1.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fryza Rachmania M</p>
+          <p>M Zaki</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -332,6 +332,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
+      <li class="header">MAIN NAVIGATION</li>
       <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="index.html">
@@ -395,104 +396,44 @@
     <div id="index"> <!-- memanggil css index -->
     <div class="container"> <!-- tampilan kotak luar agar tidak full -->
     <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="tambahsqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+        <form action="registersqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
             <tr>
-            <th colspan="2" scope="row"><h2><center><b>Tambah Anggota Baru</b></center></h2></th> <!-- judul pada tabel -->
+            <th colspan="2" scope="row"><h2><center><b>Register Simpanan Anggota</b></center></h2></th> <!-- judul pada tabel -->
             </tr>
 
             <div class="form-group">
-            <tr><center>
+            <tr><right>
+            <th  class="col-sm-2" scope="row">Id Transaksi</th> <!-- kolom baju -->
+            <td><input type="text" name="id" /></td></center>
+            </tr>
+            </div>
+
+            <div class="form-group">
+            <tr><right>
             <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="nomor_anggota" /></td></center>
+            <td><input type="text" name="id_anggota" /></td></center>
             </tr>
             </div>
 
             <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Username</th> <!-- kolom baju -->
-            <td><input type="text" name="username" /></td></center>
+            <tr><right>
+            <th  class="col-sm-2" scope="row">Total Bayar</th> <!-- kolom baju -->
+            <td><input type="text" name="total" /></td></center>
             </tr>
             </div>
 
             <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Password</th> <!-- kolom baju -->
-            <td><input type="text" name="password" /></td></center>
+            <tr><right>
+            <th  class="col-sm-2" scope="row">Tanggal transaksi</th> <!-- kolom baju -->
+            <td><input type="date" name="tgl_transaksi" /></td></center>
             </tr>
             </div>
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
-            <td><input type="text" name="nama" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Alamat</th> <!-- kolom baju -->
-            <td><input type="text" name="alamat" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Kelamin</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_kelamin" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Email</th> <!-- kolom baju -->
-            <td><input type="text" name="email" /></td></center>
-            </tr>
-            </div>
-            <tr>
-            
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Telepon</th> <!-- kolom baju -->
-            <td><input type="text" name="telepon" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Foto</th> <!-- kolom baju -->
-            <td><input type="text" name="foto" ></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_anggota" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Tanggal Daftar</th> <!-- kolom baju -->
-            <td><input type="date" name="tgl_daftar" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Status</th> <!-- kolom baju -->
-            <td><input type="text" name="status" /></td></center>
-            </tr>
-            </div>
 
             <tr>
             <tr>
             <tr>
-            <tr><center>
+            <tr><right>
             <th colspan="2" scope="row">
             <!-- tampilan tulisan simpan untuk menyimpan data dan batal untuk membatalkan data berwarna biru -->
             <input type="submit" name="simpan" id="simpan" class="btn btn-primary" value="simpan" />
@@ -500,7 +441,7 @@
   </center></tr>
             <br>
             <br>
-            <tr><center>
+            <tr><right>
             <p><a href="pendaftarananggota.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
   </center></tr>
             

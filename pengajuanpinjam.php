@@ -258,17 +258,17 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/coba.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Fryza Rachmania M</span>
+              <img src="dist/img/yuli.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Yulyanggraeni</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+                <img src="dist/img/yuli.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Fryza Rachmania M - Web Developer
-                  <small>Member since Nov. 2012</small>
+                Yulyanggraeni - Web Developer
+                  <small>Member since Nov. 2019</small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -312,10 +312,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/yuli.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fryza Rachmania M</p>
+          <p>Yulyanggraeni</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -392,120 +392,50 @@
         <li class="active">Dashboard</li>
       </ol>
     </section>
-    <div id="index"> <!-- memanggil css index -->
-    <div class="container"> <!-- tampilan kotak luar agar tidak full -->
-    <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="tambahsqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
-            <tr>
-            <th colspan="2" scope="row"><h2><center><b>Tambah Anggota Baru</b></center></h2></th> <!-- judul pada tabel -->
-            </tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="nomor_anggota" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Username</th> <!-- kolom baju -->
-            <td><input type="text" name="username" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Password</th> <!-- kolom baju -->
-            <td><input type="text" name="password" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
-            <td><input type="text" name="nama" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Alamat</th> <!-- kolom baju -->
-            <td><input type="text" name="alamat" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Kelamin</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_kelamin" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Email</th> <!-- kolom baju -->
-            <td><input type="text" name="email" /></td></center>
-            </tr>
-            </div>
-            <tr>
-            
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Telepon</th> <!-- kolom baju -->
-            <td><input type="text" name="telepon" /></td></center>
-            </tr>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Foto</th> <!-- kolom baju -->
-            <td><input type="text" name="foto" ></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_anggota" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Tanggal Daftar</th> <!-- kolom baju -->
-            <td><input type="date" name="tgl_daftar" /></td></center>
-            </tr>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Status</th> <!-- kolom baju -->
-            <td><input type="text" name="status" /></td></center>
-            </tr>
-            </div>
-
-            <tr>
-            <tr>
-            <tr>
-            <tr><center>
-            <th colspan="2" scope="row">
-            <!-- tampilan tulisan simpan untuk menyimpan data dan batal untuk membatalkan data berwarna biru -->
-            <input type="submit" name="simpan" id="simpan" class="btn btn-primary" value="simpan" />
-            <input type="reset" name="reset" id="reset" class="btn btn-primary" value="batal" /></th>
-  </center></tr>
-            <br>
-            <br>
-            <tr><center>
-            <p><a href="pendaftarananggota.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
-  </center></tr>
-            
-        </div>
-    </div>
+  <div class="container" >
+        	<div class="card col-sm-11" >
+				<div class="card-body">
+				
+				<h3 align="center"><b>PENGAJUAN PINJAMAN</b></h3><br>
+                <!-- Membuat tabel -->
+                            <a href="tambahanggota.php" class="nav-link">Tambah Anggota Baru</a>
+				<table class="table table-striped">
+					<thead>
+					<tr>
+					<td><b>ID</b></td>
+                    <td align="center"><b>Id Anggota</b></td>
+                    <td align="center"><b>Total Pinjam</b></td>
+                    <td align="center"><b>Tanggal Pinjam</b></td>
+					</tr>
+					</thead>
+<tbody>
+<?php $i=1 ?>
+<?php
+	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
+			  if(isset($_GET['tombolcari'])){
+				  $cari = $_GET['cari'];
+				  $result = mysqli_query($koneksi ,"select * from anggota where id_bahan_jadi like '%".$cari."%'");				
+			  }else{
+				  $result = mysqli_query($koneksi, "select * from transaksi_pinjam");		
+			  }
+        while($row=mysqli_fetch_assoc($result)){
+		  ?>
+	<tr>
+	<td><?php echo $row['id'];?></td>
+    <td><?php echo $row['id_anggota'];?></td>
+    <td><?php echo $row['total_pinjam'];?></td>
+    <td><?php echo $row['tgl_pinjam'];?></td>
+	<td>
+		<center>
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a class="btn btn-success" href="updateanggota.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="deleteanggota.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+		</div>
+		</center>
+	</td>
+	</tr>
+	<?php } ?>
+   </table>
 </div>
 
   <!-- /.content-wrapper -->

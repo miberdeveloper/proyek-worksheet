@@ -332,9 +332,9 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+      <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="#">
+          <a href="index.html">
             <i class="fa fa-dashboard"></i> <span>Simpan Pinjam</span>
             <span class="pull-right-container">
             </span>
@@ -347,22 +347,29 @@
             </span>
           </a>
         </li>
-        <li>
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Transaksi Simpanan</span>
+            <i class="fa fa-dashboard"></i>
+            <span>Transaksi Simpanan</span>
             <span class="pull-right-container">
+              <span class="fa fa-angle-left pull-right"></span>
             </span>
           </a>
+          <ul class="treeview-menu">
+            <li><a href="registeranggotawajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="registeranggotapokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="registeranggotasuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+          </ul>
         </li>
         <li>
-          <a href="#">
+          <a href="pengajuanpinjam.php">
             <i class="fa fa-dashboard"></i> <span>Pengajuan Simpanan</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="transaksipengembalian.php">
             <i class="fa fa-dashboard"></i> <span>Transaksi Pengembalian</span>
             <span class="pull-right-container">
             </span>
@@ -392,6 +399,10 @@
 				<h3 align="center"><b>PENDAFTARAN ANGGOTA BARU</b></h3><br>
                 <!-- Membuat tabel -->
                             <a href="tambahanggota.php" class="nav-link">Tambah Anggota Baru</a>
+                            <!-- <form class="form-inline" action="carianggota.php" method="post">
+   					    <input class="form-control mr-sm-2" type="text" name="input_cari" placeholder="Cari Berdasar Nama" class="css-input" style="width:180px;" />
+   					    <input class="btn btn-success" type="submit" name="cari" value="  Cari  " class="btn" style="padding:3px;" margin="6px;" width="50px;"  />
+  				        </form> -->
 				<table class="table table-striped">
 					<thead>
 					<tr>
