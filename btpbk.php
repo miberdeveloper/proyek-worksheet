@@ -310,6 +310,13 @@
             <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
           </ul>
         </li>
+        <li>
+          <a href="jenisbahan.php">
+            <i class="fa fa-th"></i> <span>Jenis Bahan</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
 </aside>
@@ -326,6 +333,13 @@
 	
 ?>
  <div class="table-users">
+ <div class="right-area">
+				<div class="src-area">
+					<form action="" method="GET">
+						<input class="src-input" type="text" name="cari" placeholder="Search">
+						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
+				</div><!-- src-area -->
+			</div><!-- right-area -->
    <h2><center><div class="header">Bukti Transaksi Bahan Baku</div></h2>
    <center><a href="printbtpbk.php" class="btn btn-info" role="button">PRINT</a>
 
@@ -346,7 +360,8 @@
 		  <?php
 	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
+          $cari = $_GET['cari'];
+          print_r($cari);
 				  $result = mysqli_query($koneksi ,"select * from transaksi_masuk_bahan_baku where id_bahan_baku like '%".$cari."%'");				
 			  }else{
 				  $result = mysqli_query($koneksi, "select * from transaksi_masuk_bahan_baku");		

@@ -364,6 +364,13 @@ $data = query("SELECT * FROM bahan_baku WHERE id='$_GET[id]' ")[0];
             <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
           </ul>
         </li>
+        <li>
+          <a href="jenisbahan.php">
+            <i class="fa fa-th"></i> <span>Jenis Bahan</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
   </aside>

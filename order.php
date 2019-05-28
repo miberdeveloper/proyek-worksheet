@@ -310,6 +310,13 @@
             <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
           </ul>
         </li>
+        <li>
+          <a href="jenisbahan.php">
+            <i class="fa fa-th"></i> <span>Jenis Bahan</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
 </aside>
@@ -325,6 +332,14 @@
 	// var_dump($result);
 	
 ?>
+<div class="table-users">
+ <div class="right-area">
+				<div class="src-area">
+					<form action="" method="GET">
+						<input class="src-input" type="text" name="cari" placeholder="Search">
+						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
+				</div><!-- src-area -->
+			</div><!-- right-area -->
   <!DOCTYPE html>
 <html>
 <head>
@@ -358,6 +373,7 @@
     <thead>
       <tr>
         <th><center>Nomor</th>
+        <th><center>Id</th>
         <th><center>Nama</th>
         <th><center>Harga</th>
         <th><center>Stok</th>
@@ -382,7 +398,7 @@
 		  ?>
       <tr>
          <td><center><?= $i++ ?></td>
-         <!--<td><center><?= $row['id'] ?></td>-->
+         <td><center><?= $row['id'] ?></td>
          <td><center><?= $row['nama'] ?></td>
          <td><center><?= $row['harga'] ?></td>
          <td><center><?= $row['stok'] ?></td>

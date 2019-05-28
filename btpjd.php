@@ -326,9 +326,16 @@
 	
 ?>
  <div class="table-users">
+ <div class="right-area">
+				<div class="src-area">
+					<form action="" method="GET">
+						<input class="src-input" type="text" name="cari" placeholder="Search">
+						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
+				</div><!-- src-area -->
+			</div><!-- right-area -->
    <h2><center><div class="header">Bukti Transaksi Bahan Jadi</div></h2>
    <center><a href="printbtpjd.php" class="btn btn-info" role="button">PRINT</a>
-   
+
    <table class="table table-striped">
    <thead>
    <tr>

@@ -310,6 +310,13 @@
             <li><a href="btpjd.php"><i class="fa fa-circle-o"></i>BT Bahan Jadi</a></li>
           </ul>
         </li>
+        <li>
+          <a href="jenisbahan.php">
+            <i class="fa fa-th"></i> <span>Jenis Bahan</span>
+            <span class="pull-right-container">
+            </span>
+          </a>
+        </li>
     </section>
     <!-- /.sidebar -->
 </aside>
@@ -325,6 +332,14 @@
 	// var_dump($result);
 	
 ?>
+<div class="table-users">
+ <div class="right-area">
+				<div class="src-area">
+					<form action="" method="GET">
+						<input class="src-input" type="text" name="cari" placeholder="Search">
+						<button class="src-btn" type="submit" name="tombolcari"><i class="ion-ios-search-strong"></i></button>
+				</div><!-- src-area -->
+			</div><!-- right-area -->
   <!DOCTYPE html>
 <html>
 <head>
@@ -351,13 +366,14 @@
 <div class="panel panel-default text-left">
             <div class="panel-body">
               <div class="container">
-
+              <div class="table-users">
    <center><h2>Bahan Jadi</h2></center><br>
   <a href="CRUD_bahanjadi.php" class="btn btn-primary " type="submit" style="width: 90px" ><span class="glyphicon glyphicon-plus"></span> Create</a>
    <table class="table table-striped">
     <thead>
       <tr>
         <th><center>Nomor</th>
+        <th><center>Id</th>
         <th><center>Nama</th>
         <th><center>Harga</th>
         <th><center>Stok</th>
@@ -374,7 +390,7 @@
 		  <?php
 	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
-				  $cari = $_GET['cari'];
+          $cari = $_GET['cari'];
 				  $result = mysqli_query($koneksi ,"select * from bahan_jadi where id like '%".$cari."%'");				
 			  }else{
 				  $result = mysqli_query($koneksi, "select * from bahan_jadi");		
@@ -383,7 +399,7 @@
 		  ?>
       <tr>
          <td><center><?= $i++ ?></td>
-         <!--<td><center><?= $row['id'] ?></td>-->
+         <td><center><?= $row['id'] ?>
          <td><center><?= $row['nama'] ?></td>
          <td><center><?= $row['harga'] ?></td>
          <td><center><?= $row['stok'] ?></td>
