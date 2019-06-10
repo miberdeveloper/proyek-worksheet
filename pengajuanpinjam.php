@@ -356,9 +356,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="registeranggotawajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
-            <li><a href="registeranggotapokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
-            <li><a href="registeranggotasuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+          <li><a href="simpananwajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="simpananpokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="simpanansuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
           </ul>
         </li>
         <li>
@@ -398,7 +398,7 @@
 				
 				<h3 align="center"><b>PENGAJUAN PINJAMAN</b></h3><br>
                 <!-- Membuat tabel -->
-                            <a href="tambahanggota.php" class="nav-link">Tambah Anggota Baru</a>
+                            <a href="tambahpengajuan.php" class="nav-link">Tambah Transaksi</a>
 				<table class="table table-striped">
 					<thead>
 					<tr>
@@ -428,8 +428,8 @@
 	<td>
 		<center>
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<a class="btn btn-success" href="updateanggota.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
-			<a class="btn btn-danger" href="deleteanggota.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+			<a class="btn btn-success" href="updatepengajuan.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="deletepengajuan.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
 		</div>
 		</center>
 	</td>

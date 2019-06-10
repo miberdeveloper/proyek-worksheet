@@ -333,7 +333,6 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="index.html">
             <i class="fa fa-dashboard"></i> <span>Simpan Pinjam</span>
@@ -357,9 +356,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="registeranggotawajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
-            <li><a href="registeranggotapokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
-            <li><a href="registeranggotasuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+            <li><a href="simpananwajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="simpananpokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="simpanansuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
           </ul>
         </li>
         <li>
@@ -396,34 +395,40 @@
     <div id="index"> <!-- memanggil css index -->
     <div class="container"> <!-- tampilan kotak luar agar tidak full -->
     <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="registersqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
-            <tr>
+        <form action="registersqlanggotawajib.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+        <div class="container text-center">    
+        <div class="row">
+        <div class="col-sm-20">    
+        <div class="row">
+        <div class="panel panel-default text-left">    
+        <tr>
             <th colspan="2" scope="row"><h2><center><b>Register Simpanan Anggota</b></center></h2></th> <!-- judul pada tabel -->
             </tr>
+         
 
-            <div class="form-group">
-            <tr><right>
+            <!-- <div class="form-group">
+            <tr><center>
             <th  class="col-sm-2" scope="row">Id Transaksi</th> <!-- kolom baju -->
-            <td><input type="text" name="id" /></td></center>
+            <!-- <td><input type="text" name="id" /></td></center>
             </tr>
-            </div>
+            </div> -->
 
             <div class="form-group">
-            <tr><right>
+            <tr><center>
             <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
             <td><input type="text" name="id_anggota" /></td></center>
             </tr>
             </div>
 
             <div class="form-group">
-            <tr><right>
+            <tr><center>
             <th  class="col-sm-2" scope="row">Total Bayar</th> <!-- kolom baju -->
             <td><input type="text" name="total" /></td></center>
             </tr>
             </div>
 
             <div class="form-group">
-            <tr><right>
+            <tr><center>
             <th  class="col-sm-2" scope="row">Tanggal transaksi</th> <!-- kolom baju -->
             <td><input type="date" name="tgl_transaksi" /></td></center>
             </tr>
@@ -433,18 +438,21 @@
             <tr>
             <tr>
             <tr>
-            <tr><right>
+            <tr><center>
             <th colspan="2" scope="row">
             <!-- tampilan tulisan simpan untuk menyimpan data dan batal untuk membatalkan data berwarna biru -->
             <input type="submit" name="simpan" id="simpan" class="btn btn-primary" value="simpan" />
             <input type="reset" name="reset" id="reset" class="btn btn-primary" value="batal" /></th>
   </center></tr>
             <br>
-            <br>
-            <tr><right>
-            <p><a href="pendaftarananggota.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
+            <tr><center>
+            <p><a href="simpananwajib.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
   </center></tr>
             
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
     </div>
 </div>

@@ -356,9 +356,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="registeranggotawajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
-            <li><a href="registeranggotapokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
-            <li><a href="registeranggotasuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+          <li><a href="simpananwajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="simpananpokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="simpanansuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
           </ul>
         </li>
         <li>
@@ -419,7 +419,6 @@
                     <td align="center"><b>Jenis Anggota</b></td>
                     <td align="center"><b>Tanggal Daftar</b></td>
                     <td align="center"><b>Status</b></td>
-                    <td align="center"><b>AKSI</b></td>
 					</tr>
 					</thead>
 <tbody>

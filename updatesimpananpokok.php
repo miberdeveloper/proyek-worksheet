@@ -1,7 +1,7 @@
 <?php
 include "koneksi/koneksi.php"; // memanggil file koneksi.php untuk menghubungkan ke database
 //memberikan perintah query sql menampilkan data berdasarkan id yang dipilih
-$data = query("SELECT * FROM anggota WHERE id='$_GET[id]' ")[0];
+$data = query("SELECT * FROM simpanan_pokok WHERE id='$_GET[id]' ")[0];
 ?>
 <!DOCTYPE html>
 <html>
@@ -263,16 +263,16 @@ $data = query("SELECT * FROM anggota WHERE id='$_GET[id]' ")[0];
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/coba.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Fryza Rachmania M</span>
+              <img src="dist/img/coba1.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">M Zaki</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+                <img src="dist/img/coba1.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Fryza Rachmania M - Web Developer
+                  M Zaki - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -317,10 +317,10 @@ $data = query("SELECT * FROM anggota WHERE id='$_GET[id]' ")[0];
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/coba1.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fryza Rachmania M</p>
+          <p>M Zaki</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -400,16 +400,17 @@ $data = query("SELECT * FROM anggota WHERE id='$_GET[id]' ")[0];
     <div id="index"> <!-- memanggil css index -->
     <div class="container"> <!-- tampilan kotak luar agar tidak full -->
     <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="updatesqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+        <form action="updatesqlsimpananpokok.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
         <div class="container text-center">    
         <div class="row">
         <div class="col-sm-20">    
         <div class="row">
         <div class="panel panel-default text-left">
             <tr>
-            <th colspan="2" scope="row"><h2><center><b>Update Anggota Baru</b></center></h2></th> <!-- judul pada tabel -->
+            <th colspan="2" scope="row"><h2><center><b>Update Simpanan Pokok</b></center></h2></th> <!-- judul pada tabel -->
             </tr>
 
+            
             <div class="form-group">
             <tr><center>
             <th  class="col-sm-2" scope="row">Id</th> <!-- kolom baju -->
@@ -420,100 +421,32 @@ $data = query("SELECT * FROM anggota WHERE id='$_GET[id]' ")[0];
             <div class="form-group">
             <tr><center>
             <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="nomor_anggota" value="<?php echo $data['nomor_anggota'];?>"> 
+            <td><input type="text" name="id_anggota" value="<?php echo $data['id_anggota'];?>"> 
             </tr></center>
             </div>
 
             <div class="form-group">
             <tr><center>
-            <th  class="col-sm-2" scope="row">Username</th> <!-- kolom baju -->
-            <td><input type="text" name="username" value="<?php echo $data['username'];?>"> 
+            <th  class="col-sm-2" scope="row">Total Simpanan</th> <!-- kolom baju -->
+            <td><input type="text" name="total" value="<?php echo $data['total'];?>"> 
             </tr></center>
             </div>
 
             <div class="form-group">
             <tr><center>
-            <th  class="col-sm-2" scope="row">Password</th> <!-- kolom baju -->
-            <td><input type="text" name="password" value="<?php echo $data['password'];?>"></td>
+            <th  class="col-sm-2" scope="row">Tanggal Transaksi</th> <!-- kolom baju -->
+            <td><input type="date" name="tgl_transaksi" value="<?php echo $data['tgl_transaksi'];?>"></td>
             </tr><center>
             </div>
 
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Nama</th> <!-- kolom baju -->
-            <td><input type="text" name="nama" value="<?php echo $data['nama'];?>"></td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Alamat</th> <!-- kolom baju -->
-            <td><input type="text" name="alamat" value="<?php echo $data['alamat'];?>"></td></td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Kelamin</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_kelamin" value="<?php echo $data['jenis_kelamin'];?>"</td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Email</th> <!-- kolom baju -->
-            <td><input type="text" name="email" value="<?php echo $data['email'];?>"</td>
-            </tr></center>
-            </div>
-            <tr>
-            
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Telepon</th> <!-- kolom baju -->
-            <td><input type="text" name="telepon" value="<?php echo $data['telepon'];?>"</td>
-            </tr></center>
-            </div>
-            <tr>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Foto</th> <!-- kolom baju -->
-            <td><input type="text" name="foto" value="<?php echo $data['foto'];?>"</td>
-            </tr></center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Jenis Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="jenis_anggota" value="<?php echo $data['jenis_anggota'];?>"</td>
-            </tr></center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Tanggal Daftar</th> <!-- kolom baju -->
-            <td><input type="date" name="tgl_daftar" value="<?php echo $data['tgl_daftar'];?>"</td>
-            </tr></center>
-            </div>
-
-            <div class="form-group">
-            <tr><center>
-            <th  class="col-sm-2" scope="row">Status</th> <!-- kolom baju -->
-            <td><input type="text" name="status" value="<?php echo $data['status'];?>"</td>
-            </tr></center>
-            </div>
-
             <center><button type="submit" name="update" class="btn btn-primary">Edit</button></center>
-            <p><center><a href="pendaftarananggota.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
+            <p><center><a href="simpananpokok.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
             </tr>
             </div>
             </div>
             </div>
             </div>
-            </div> 
+            </div>
         </div>
     </div>
 </div>

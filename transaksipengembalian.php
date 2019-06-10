@@ -356,9 +356,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="registeranggotawajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
-            <li><a href="registeranggotapokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
-            <li><a href="registeranggotasuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+          <li><a href="simpananwajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="simpananpokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="simpanansuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
           </ul>
         </li>
         <li>
@@ -415,7 +415,7 @@
 	    $koneksi = mysqli_connect("localhost", "root", "", "proyek1");
 			  if(isset($_GET['tombolcari'])){
 				  $cari = $_GET['cari'];
-				  $result = mysqli_query($koneksi ,"select * from anggota where id_bahan_jadi like '%".$cari."%'");				
+				  $result = mysqli_query($koneksi ,"select * from transaksi_angsuran where id_bahan_jadi like '%".$cari."%'");				
 			  }else{
 				  $result = mysqli_query($koneksi, "select * from transaksi_angsuran");		
         }
@@ -429,8 +429,8 @@
 	<td>
 		<center>
 		<div class="btn-group" role="group" aria-label="Basic example">
-			<a class="btn btn-success" href="updateanggota.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
-			<a class="btn btn-danger" href="deleteanggota.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
+			<a class="btn btn-success" href="updatepengembalian.php?id=<?php echo $row['id'];?>">Edit <!-- untuk ke tampilan edit -->
+			<a class="btn btn-danger" href="deletepengembalian.php?id=<?php echo $row['id'];?>">Delete</a></a> <!-- untuk menghapus data -->
 		</div>
 		</center>
 	</td>

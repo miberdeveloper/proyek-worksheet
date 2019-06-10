@@ -1,3 +1,8 @@
+<?php
+include "koneksi/koneksi.php"; // memanggil file koneksi.php untuk menghubungkan ke database
+//memberikan perintah query sql menampilkan data berdasarkan id yang dipilih
+$data = query("SELECT * FROM transaksi_angsuran WHERE id='$_GET[id]' ")[0];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -258,16 +263,16 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/coba.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Fryza Rachmania M</span>
+              <img src="dist/img/greg.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Gregorius Septian Y</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+                <img src="dist/img/greg.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Fryza Rachmania M - Web Developer
+                Gregorius Septian Y - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -312,10 +317,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/coba.jpg" class="img-circle" alt="User Image">
+          <img src="dist/img/greg.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Fryza Rachmania M</p>
+          <p>Gregorius Septian Y</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -332,9 +337,9 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+      <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="#">
+          <a href="index.html">
             <i class="fa fa-dashboard"></i> <span>Simpan Pinjam</span>
             <span class="pull-right-container">
             </span>
@@ -347,22 +352,29 @@
             </span>
           </a>
         </li>
-        <li>
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Transaksi Simpanan</span>
+            <i class="fa fa-dashboard"></i>
+            <span>Transaksi Simpanan</span>
             <span class="pull-right-container">
+              <span class="fa fa-angle-left pull-right"></span>
             </span>
           </a>
+          <ul class="treeview-menu">
+          <li><a href="simpananwajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="simpananpokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="simpanansuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+          </ul>
         </li>
         <li>
-          <a href="#">
+          <a href="pengajuanpinjam.php">
             <i class="fa fa-dashboard"></i> <span>Pengajuan Simpanan</span>
             <span class="pull-right-container">
             </span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="transaksipengembalian.php">
             <i class="fa fa-dashboard"></i> <span>Transaksi Pengembalian</span>
             <span class="pull-right-container">
             </span>
@@ -388,29 +400,52 @@
     <div id="index"> <!-- memanggil css index -->
     <div class="container"> <!-- tampilan kotak luar agar tidak full -->
     <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
-        <form action="tambahsqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+        <form action="updatesqlpengembalian.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+        <div class="container text-center">    
+        <div class="row">
+        <div class="col-sm-20">    
+        <div class="row">
+        <div class="panel panel-default text-left">
             <tr>
-            <th colspan="2" scope="row"><h2><center><b>Jenis Simpanan</b></center></h2></th> <!-- judul pada tabel -->
+            <th colspan="2" scope="row"><h2><center><b>Update Transaksi Pengembalian</b></center></h2></th> <!-- judul pada tabel -->
             </tr>
 
             <div class="form-group">
-            <tr>
-            <th  class="col-sm-2" scope="row">Id Anggota</th> <!-- kolom baju -->
-            <td><input type="text" name="nomor_anggota" /></td>
-            </tr>
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Id</th> <!-- kolom baju -->
+            <td><input type="text" name="id" value="<?php echo $_GET['id'];?>"> 
+            </tr></center>
             </div>
 
-            <th colspan="2" scope="row">
-            <!-- tampilan tulisan simpan untuk menyimpan data dan batal untuk membatalkan data berwarna biru -->
-            <input type="submit" name="simpan" id="simpan" class="btn btn-primary" value="simpan" />
-            <input type="reset" name="reset" id="reset" class="btn btn-primary" value="batal" /></th>
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Id Angsuran</th> <!-- kolom baju -->
+            <td><input type="text" name="id_angsuran" value="<?php echo $data['id_angsuran'];?>"> 
+            </tr></center>
+            </div>
+
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Total Angsuran</th> <!-- kolom baju -->
+            <td><input type="text" name="total_angsuran" value="<?php echo $data['total_angsuran'];?>"> 
+            </tr></center>
+            </div>
+
+            <div class="form-group">
+            <tr><center>
+            <th  class="col-sm-2" scope="row">Tanggal Angsuran</th> <!-- kolom baju -->
+            <td><input type="date" name="tgl_angsuran" value="<?php echo $data['tgl_angsuran'];?>"></td>
+            </tr><center>
+            </div>
+
+            <center><button type="submit" name="update" class="btn btn-primary">Edit</button></center>
+            <p><center><a href="transaksipengembalian.php"><b>Back<b></a></center><p> <!-- kembali ke menu.php -->
             </tr>
-            <br>
-            <br>
-            <tr>
-            <p><a href="tambahanggota.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
-            </tr>
-            
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>  
         </div>
     </div>
 </div>

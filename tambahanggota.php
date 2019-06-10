@@ -356,9 +356,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="registeranggotawajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
-            <li><a href="registeranggotapokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
-            <li><a href="registeranggotasuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
+          <li><a href="simpananwajib.php"><i class="fa fa-circle-o"></i> Simpanan Wajib</a></li>
+            <li><a href="simpananpokok.php"><i class="fa fa-circle-o"></i> Simpanan Pokok</a></li>
+            <li><a href="simpanansuka.php"><i class="fa fa-circle-o"></i> Simpanan Sukarela</a></li>
           </ul>
         </li>
         <li>
@@ -396,6 +396,11 @@
     <div class="container"> <!-- tampilan kotak luar agar tidak full -->
     <div class="card col-sm-6"> <!-- untuk memberi banyaknya kolom bootstrap -->
         <form action="tambahsqlanggota.php" class="inner-login" method="post"> <!-- supaya bisa menginputkan tambahsql.php-->
+        <div class="container text-center">    
+        <div class="row">
+        <div class="col-sm-20">    
+        <div class="row">
+        <div class="panel panel-default text-left">
             <tr>
             <th colspan="2" scope="row"><h2><center><b>Tambah Anggota Baru</b></center></h2></th> <!-- judul pada tabel -->
             </tr>
@@ -499,11 +504,14 @@
             <input type="reset" name="reset" id="reset" class="btn btn-primary" value="batal" /></th>
   </center></tr>
             <br>
-            <br>
             <tr><center>
             <p><a href="pendaftarananggota.php"><b>Back<b></a><p> <!-- kembali ke menu.php -->
   </center></tr>
-            
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>   
         </div>
     </div>
 </div>
